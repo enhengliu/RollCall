@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Digital Dismay.otf">
+            <string>DigitalDismay</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DigitalClockView" customModule="NoxClock" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomConstraint" destination="fFP-nc-Ug5" id="9dS-Ok-LVu"/>
+                <outlet property="firstDotView" destination="aQO-sL-rAo" id="zWL-Md-erE"/>
+                <outlet property="hourNameLabel" destination="M9G-aI-yE9" id="Qvt-W2-8MW"/>
+                <outlet property="hourNumberLabel" destination="ePC-qQ-8p3" id="csB-JS-bYh"/>
+                <outlet property="leadingConstraint" destination="w0V-TJ-Ktb" id="Ubq-pQ-PVQ"/>
+                <outlet property="minuteNameLabel" destination="iLL-CZ-YE6" id="FYg-kD-Oz3"/>
+                <outlet property="minuteNumberLabel" destination="Tc3-tR-lZl" id="Ccd-Tz-GWI"/>
+                <outlet property="placeholderView" destination="qps-zW-hcQ" id="GRf-Sm-hIA"/>
+                <outlet property="secondDotView" destination="2P8-CN-ryN" id="eGg-Q2-J0d"/>
+                <outlet property="secondNameLabel" destination="F8D-tI-b0k" id="Mi1-KS-XgF"/>
+                <outlet property="secondNumberLabel" destination="ZPX-32-isp" id="xFR-yR-QpC"/>
+                <outlet property="topConstraint" destination="jtc-Is-wbn" id="dQv-dN-hos"/>
+                <outlet property="trailingConstraint" destination="jO3-60-F72" id="qrF-JD-jnQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="318"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qps-zW-hcQ">
+                    <rect key="frame" x="93" y="127" width="189" height="63"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Y6-Ux-dqG">
+                            <rect key="frame" x="0.0" y="0.0" width="53" height="63"/>
+                            <fontDescription key="fontDescription" name="DigitalDismay" family="Digital Dismay" pointSize="60"/>
+                            <color key="textColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="493-TV-8ly">
+                            <rect key="frame" x="58" y="24" width="5" height="15"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Fb-K9-z1n">
+                                    <rect key="frame" x="0.0" y="0.0" width="5" height="5"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="4Fb-K9-z1n" secondAttribute="height" multiplier="1:1" id="1y8-Uz-HEl"/>
+                                        <constraint firstAttribute="width" constant="5" id="UsK-1y-exk"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0R-3X-27B">
+                                    <rect key="frame" x="0.0" y="10" width="5" height="5"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="L0R-3X-27B" firstAttribute="height" secondItem="4Fb-K9-z1n" secondAttribute="height" id="INT-jH-qMx"/>
+                                <constraint firstItem="L0R-3X-27B" firstAttribute="width" secondItem="4Fb-K9-z1n" secondAttribute="width" id="WjY-BB-YCM"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ac-MB-RFE">
+                            <rect key="frame" x="68" y="0.0" width="53" height="63"/>
+                            <fontDescription key="fontDescription" name="DigitalDismay" family="Digital Dismay" pointSize="60"/>
+                            <color key="textColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yu8-Sx-2qB">
+                            <rect key="frame" x="126" y="24" width="5" height="15"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmY-02-g02">
+                                    <rect key="frame" x="0.0" y="0.0" width="5" height="5"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="pmY-02-g02" secondAttribute="height" multiplier="1:1" id="3h0-3p-nIr"/>
+                                        <constraint firstAttribute="width" constant="5" id="OZ1-dZ-S5G"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZB-Hb-HVF">
+                                    <rect key="frame" x="0.0" y="10" width="5" height="5"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="KZB-Hb-HVF" firstAttribute="height" secondItem="pmY-02-g02" secondAttribute="height" id="BuL-DS-166"/>
+                                <constraint firstItem="KZB-Hb-HVF" firstAttribute="width" secondItem="pmY-02-g02" secondAttribute="width" id="jLz-i6-7hI"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86w-9h-Xtj">
+                            <rect key="frame" x="136" y="0.0" width="53" height="63"/>
+                            <fontDescription key="fontDescription" name="DigitalDismay" family="Digital Dismay" pointSize="60"/>
+                            <color key="textColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="b6q-p2-G4K">
+                    <rect key="frame" x="93" y="127.5" width="189" height="63"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePC-qQ-8p3">
+                            <rect key="frame" x="0.0" y="0.0" width="53" height="63"/>
+                            <fontDescription key="fontDescription" name="DigitalDismay" family="Digital Dismay" pointSize="60"/>
+                            <color key="textColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aQO-sL-rAo">
+                            <rect key="frame" x="58" y="24" width="5" height="15"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaM-0Z-jME">
+                                    <rect key="frame" x="0.0" y="0.0" width="5" height="5"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="IaM-0Z-jME" secondAttribute="height" multiplier="1:1" id="hFi-DV-cQq"/>
+                                        <constraint firstAttribute="width" constant="5" id="tCQ-Bf-yUA"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AxY-w5-cR4">
+                                    <rect key="frame" x="0.0" y="10" width="5" height="5"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="AxY-w5-cR4" firstAttribute="width" secondItem="IaM-0Z-jME" secondAttribute="width" id="6Y6-iB-M4F"/>
+                                <constraint firstItem="AxY-w5-cR4" firstAttribute="height" secondItem="IaM-0Z-jME" secondAttribute="height" id="fUM-zE-PlY"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc3-tR-lZl">
+                            <rect key="frame" x="68" y="0.0" width="53" height="63"/>
+                            <fontDescription key="fontDescription" name="DigitalDismay" family="Digital Dismay" pointSize="60"/>
+                            <color key="textColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2P8-CN-ryN">
+                            <rect key="frame" x="126" y="24" width="5" height="15"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DW5-iE-aFW">
+                                    <rect key="frame" x="0.0" y="0.0" width="5" height="5"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="5" id="fIf-88-mbo"/>
+                                        <constraint firstAttribute="width" secondItem="DW5-iE-aFW" secondAttribute="height" multiplier="1:1" id="qgV-dR-oyY"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ad-tr-eD4">
+                                    <rect key="frame" x="0.0" y="10" width="5" height="5"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="5Ad-tr-eD4" firstAttribute="width" secondItem="DW5-iE-aFW" secondAttribute="width" id="6sV-f1-Ka6"/>
+                                <constraint firstItem="5Ad-tr-eD4" firstAttribute="height" secondItem="DW5-iE-aFW" secondAttribute="height" id="bYZ-0o-11h"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPX-32-isp">
+                            <rect key="frame" x="136" y="0.0" width="53" height="63"/>
+                            <fontDescription key="fontDescription" name="DigitalDismay" family="Digital Dismay" pointSize="60"/>
+                            <color key="textColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小時" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9G-aI-yE9">
+                    <rect key="frame" x="109.5" y="190.5" width="20" height="14"/>
+                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="10"/>
+                    <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLL-CZ-YE6">
+                    <rect key="frame" x="182.5" y="190.5" width="10" height="14"/>
+                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="10"/>
+                    <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8D-tI-b0k">
+                    <rect key="frame" x="250.5" y="190.5" width="10" height="14"/>
+                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="10"/>
+                    <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qps-zW-hcQ" firstAttribute="height" secondItem="b6q-p2-G4K" secondAttribute="height" id="2Ng-HI-DzG"/>
+                <constraint firstItem="b6q-p2-G4K" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6FS-67-k5t"/>
+                <constraint firstItem="M9G-aI-yE9" firstAttribute="centerX" secondItem="ePC-qQ-8p3" secondAttribute="centerX" id="9nd-KZ-RFl"/>
+                <constraint firstItem="iLL-CZ-YE6" firstAttribute="centerX" secondItem="Tc3-tR-lZl" secondAttribute="centerX" id="Fno-Cw-XmH"/>
+                <constraint firstItem="F8D-tI-b0k" firstAttribute="centerX" secondItem="ZPX-32-isp" secondAttribute="centerX" id="GmY-pv-zkD"/>
+                <constraint firstItem="iLL-CZ-YE6" firstAttribute="top" secondItem="Tc3-tR-lZl" secondAttribute="bottom" id="I3F-gI-GmB"/>
+                <constraint firstItem="M9G-aI-yE9" firstAttribute="top" secondItem="ePC-qQ-8p3" secondAttribute="bottom" id="Tpf-Nw-F32"/>
+                <constraint firstItem="b6q-p2-G4K" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Wch-88-g1J"/>
+                <constraint firstItem="F8D-tI-b0k" firstAttribute="top" secondItem="ZPX-32-isp" secondAttribute="bottom" id="auk-Y4-fAU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="b6q-p2-G4K" secondAttribute="bottom" id="fFP-nc-Ug5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b6q-p2-G4K" secondAttribute="trailing" id="jO3-60-F72"/>
+                <constraint firstItem="b6q-p2-G4K" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="jtc-Is-wbn"/>
+                <constraint firstItem="qps-zW-hcQ" firstAttribute="centerX" secondItem="b6q-p2-G4K" secondAttribute="centerX" id="klF-Z9-I4d"/>
+                <constraint firstItem="qps-zW-hcQ" firstAttribute="width" secondItem="b6q-p2-G4K" secondAttribute="width" id="odY-aY-dLl"/>
+                <constraint firstItem="qps-zW-hcQ" firstAttribute="centerY" secondItem="b6q-p2-G4K" secondAttribute="centerY" id="pt6-KU-BeW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iLL-CZ-YE6" secondAttribute="bottom" id="tbb-6I-KDa"/>
+                <constraint firstItem="b6q-p2-G4K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" id="w0V-TJ-Ktb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="1.5" y="-107"/>
+        </view>
+    </objects>
+</document>

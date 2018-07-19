@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClockAlertViewController" customModule="NoxClock" customModuleProvider="target">
+            <connections>
+                <outlet property="digitalClockView" destination="QLH-o6-nGO" id="pph-is-xLu"/>
+                <outlet property="mainButton" destination="Ulk-pr-rJQ" id="27H-DY-d25"/>
+                <outlet property="mainView" destination="AoT-dP-gYn" id="x3s-9i-Jw6"/>
+                <outlet property="maskView" destination="t94-aw-KkD" id="Fh1-vI-LOg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t94-aw-KkD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoT-dP-gYn">
+                    <rect key="frame" x="67" y="208" width="240" height="251"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLH-o6-nGO" customClass="DigitalClockView" customModule="NoxClock" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="108"/>
+                            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="QLH-o6-nGO" secondAttribute="height" multiplier="20:9" id="TsH-bb-PJf"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7j-h3-V84">
+                            <rect key="frame" x="0.0" y="108" width="240" height="143"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yl6-Aw-dnm">
+                                    <rect key="frame" x="50" y="25.5" width="140" height="91.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-Ou-s7y">
+                                            <rect key="frame" x="49" y="0.0" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulk-pr-rJQ" customClass="SemiCornerButton" customModule="NoxClock" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="35.5" width="140" height="56"/>
+                                            <color key="backgroundColor" red="0.8784313725490196" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="fhZ-hc-S2h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="21"/>
+                                            <state key="normal" title="確定"/>
+                                            <connections>
+                                                <action selector="mainButtonOnPress:" destination="-1" eventType="touchUpInside" id="KQw-aK-10j"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="yl6-Aw-dnm" firstAttribute="centerY" secondItem="S7j-h3-V84" secondAttribute="centerY" id="A2f-QF-wwp"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yl6-Aw-dnm" secondAttribute="bottom" id="DQC-ga-Mk0"/>
+                                <constraint firstItem="yl6-Aw-dnm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S7j-h3-V84" secondAttribute="leading" id="FTt-B8-FHf"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yl6-Aw-dnm" secondAttribute="trailing" id="OS0-6s-Dbn"/>
+                                <constraint firstItem="yl6-Aw-dnm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="S7j-h3-V84" secondAttribute="top" id="vZX-D3-tTV"/>
+                                <constraint firstItem="yl6-Aw-dnm" firstAttribute="centerX" secondItem="S7j-h3-V84" secondAttribute="centerX" id="w3Z-ja-FAY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="S7j-h3-V84" firstAttribute="top" secondItem="QLH-o6-nGO" secondAttribute="bottom" id="7cc-jy-Rr4"/>
+                        <constraint firstAttribute="bottom" secondItem="S7j-h3-V84" secondAttribute="bottom" id="Dso-GK-qS1"/>
+                        <constraint firstItem="QLH-o6-nGO" firstAttribute="leading" secondItem="AoT-dP-gYn" secondAttribute="leading" id="Dzx-oF-chI"/>
+                        <constraint firstAttribute="trailing" secondItem="QLH-o6-nGO" secondAttribute="trailing" id="IzH-Us-joR"/>
+                        <constraint firstItem="QLH-o6-nGO" firstAttribute="top" secondItem="AoT-dP-gYn" secondAttribute="top" id="R8k-Ip-FcU"/>
+                        <constraint firstAttribute="width" secondItem="AoT-dP-gYn" secondAttribute="height" multiplier="240:251" id="RPx-TQ-6Ap"/>
+                        <constraint firstItem="S7j-h3-V84" firstAttribute="leading" secondItem="AoT-dP-gYn" secondAttribute="leading" id="VbG-s6-Uqz"/>
+                        <constraint firstAttribute="trailing" secondItem="S7j-h3-V84" secondAttribute="trailing" id="e0A-uf-jvF"/>
+                        <constraint firstItem="Ulk-pr-rJQ" firstAttribute="width" secondItem="AoT-dP-gYn" secondAttribute="width" multiplier="140/240" id="hEc-Pt-GhP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AoT-dP-gYn" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="240/375" id="Acd-VJ-L4N"/>
+                <constraint firstItem="t94-aw-KkD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LXV-oK-UFp"/>
+                <constraint firstItem="AoT-dP-gYn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SmP-Cs-jI2"/>
+                <constraint firstItem="t94-aw-KkD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Z3N-8v-hwm"/>
+                <constraint firstItem="t94-aw-KkD" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="n9s-73-P3x"/>
+                <constraint firstItem="AoT-dP-gYn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qYt-r0-AAB"/>
+                <constraint firstItem="t94-aw-KkD" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zXI-Jr-4Az"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

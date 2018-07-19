@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Index View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="IndexViewController" customModule="NoxClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKi-pu-pT5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="snI-Iz-FBe" customClass="ClockView" customModule="NoxClock" customModuleProvider="target">
+                                <rect key="frame" x="51" y="130" width="272" height="272"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="snI-Iz-FBe" secondAttribute="height" multiplier="1:1" id="v4i-3p-fax"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJJ-GY-5Lu">
+                                <rect key="frame" x="147" y="498" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AJJ-GY-5Lu" secondAttribute="height" multiplier="1:1" id="Sdz-fc-D1Q"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="clock_in_btn">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clockInBtnOnTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Zvj-Eg-d0T"/>
+                                    <action selector="clockInBtnOnTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0Z-Ag-fRs"/>
+                                    <action selector="clockInBtnOnTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="cP8-Ln-8Nw"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twm-2S-nQL">
+                                <rect key="frame" x="143.5" y="453" width="89" height="32"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xze-B1-dnO">
+                                        <rect key="frame" x="8" y="0.0" width="73" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上班" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8V-yx-6ht">
+                                                <rect key="frame" x="0.0" y="0.0" width="36.5" height="32"/>
+                                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="18"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYc-G3-gmY">
+                                                <rect key="frame" x="36.5" y="0.0" width="36.5" height="32"/>
+                                                <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="18"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.30980392156862746" blue="0.30980392156862746" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Xze-B1-dnO" secondAttribute="trailing" constant="8" id="2nZ-D0-Yyo"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xze-B1-dnO" secondAttribute="bottom" id="4eL-Wc-Jyv"/>
+                                    <constraint firstItem="Xze-B1-dnO" firstAttribute="leading" secondItem="Twm-2S-nQL" secondAttribute="leading" constant="8" id="LJP-bP-3Ez"/>
+                                    <constraint firstItem="Xze-B1-dnO" firstAttribute="top" secondItem="Twm-2S-nQL" secondAttribute="top" id="gEF-9I-vvm"/>
+                                    <constraint firstAttribute="height" constant="32" id="v9z-z9-uQf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Twm-2S-nQL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="57k-xH-OXw"/>
+                            <constraint firstItem="oKi-pu-pT5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="84f-e2-GRJ"/>
+                            <constraint firstItem="AJJ-GY-5Lu" firstAttribute="top" secondItem="Twm-2S-nQL" secondAttribute="bottom" constant="13" id="8bW-bN-ryO"/>
+                            <constraint firstItem="snI-Iz-FBe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="272/375" id="AkH-7W-wwA"/>
+                            <constraint firstItem="AJJ-GY-5Lu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Axu-P9-uwB"/>
+                            <constraint firstItem="oKi-pu-pT5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VsZ-YE-jv3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AJJ-GY-5Lu" secondAttribute="bottom" constant="89" id="cMr-E9-GAd"/>
+                            <constraint firstItem="oKi-pu-pT5" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="f5E-5C-97S"/>
+                            <constraint firstItem="oKi-pu-pT5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gaW-PX-S9A"/>
+                            <constraint firstItem="snI-Iz-FBe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="bottom" multiplier="130/667" id="ikB-IK-BGh"/>
+                            <constraint firstItem="snI-Iz-FBe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ks4-Pa-B3z"/>
+                            <constraint firstItem="AJJ-GY-5Lu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="80/375" id="lp6-Yn-5OF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="clockInBtn" destination="AJJ-GY-5Lu" id="QBu-wS-JLg"/>
+                        <outlet property="clockInDisplayLabel" destination="S8V-yx-6ht" id="RhI-M6-I7P"/>
+                        <outlet property="clockInDisplayLabelView" destination="Twm-2S-nQL" id="kfD-aH-KRI"/>
+                        <outlet property="clockView" destination="snI-Iz-FBe" id="WZA-TP-arv"/>
+                        <outlet property="gradientView" destination="oKi-pu-pT5" id="Hid-Vj-Ks8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clock_in_btn" width="80" height="80"/>
+    </resources>
+</document>

@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		043F942C210031F60052A5D1 /* ClockAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F942A210031F60052A5D1 /* ClockAlertViewController.swift */; };
+		043F942D210031F60052A5D1 /* ClockAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043F942B210031F60052A5D1 /* ClockAlertViewController.xib */; };
+		043F942F210033BA0052A5D1 /* Digital Dismay.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043F942E210033BA0052A5D1 /* Digital Dismay.otf */; };
+		043F9431210035350052A5D1 /* DigitalClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F9430210035350052A5D1 /* DigitalClockView.swift */; };
+		043F9433210035530052A5D1 /* DigitalClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043F9432210035530052A5D1 /* DigitalClockView.xib */; };
+		043F9435210045F40052A5D1 /* SemiCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F9434210045F40052A5D1 /* SemiCornerButton.swift */; };
+		043F943D2100669D0052A5D1 /* CutomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F943C2100669D0052A5D1 /* CutomAlertViewController.swift */; };
+		046F994E20F6F04600D471E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F994D20F6F04600D471E1 /* AppDelegate.swift */; };
+		046F995320F6F04600D471E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F995120F6F04600D471E1 /* Main.storyboard */; };
+		046F995520F6F04700D471E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046F995420F6F04700D471E1 /* Assets.xcassets */; };
+		046F995820F6F04700D471E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F995620F6F04700D471E1 /* LaunchScreen.storyboard */; };
+		046F996120F6F07F00D471E1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F996020F6F07F00D471E1 /* BaseViewController.swift */; };
+		046F996320F6F0AB00D471E1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F996220F6F0AB00D471E1 /* IndexViewController.swift */; };
+		046F996820F6F21D00D471E1 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F996720F6F21D00D471E1 /* XibView.swift */; };
+		046F996A20F6FA1E00D471E1 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F996920F6FA1E00D471E1 /* ClockView.swift */; };
+		046F996C20F6FA3D00D471E1 /* ClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046F996B20F6FA3D00D471E1 /* ClockView.xib */; };
+		046F996F20F6FF2900D471E1 /* UIView+AnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F996E20F6FF2900D471E1 /* UIView+AnchorPoint.swift */; };
+		046F997320F70AC700D471E1 /* CommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F997220F70AC700D471E1 /* CommonDefine.swift */; };
+		046F997520F7108200D471E1 /* ClockObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F997420F7108200D471E1 /* ClockObject.swift */; };
+		046F997720F7283800D471E1 /* ClockView+ClockObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F997620F7283800D471E1 /* ClockView+ClockObject.swift */; };
+		04E270C720F789F60099FB9F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E270C620F789F60099FB9F /* Color+Extension.swift */; };
+		04E270CC20F7A7700099FB9F /* Dount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E270CB20F7A7700099FB9F /* Dount.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		043F942A210031F60052A5D1 /* ClockAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockAlertViewController.swift; sourceTree = "<group>"; };
+		043F942B210031F60052A5D1 /* ClockAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockAlertViewController.xib; sourceTree = "<group>"; };
+		043F942E210033BA0052A5D1 /* Digital Dismay.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Digital Dismay.otf"; sourceTree = "<group>"; };
+		043F9430210035350052A5D1 /* DigitalClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalClockView.swift; sourceTree = "<group>"; };
+		043F9432210035530052A5D1 /* DigitalClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DigitalClockView.xib; sourceTree = "<group>"; };
+		043F9434210045F40052A5D1 /* SemiCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiCornerButton.swift; sourceTree = "<group>"; };
+		043F943C2100669D0052A5D1 /* CutomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutomAlertViewController.swift; sourceTree = "<group>"; };
+		046F994A20F6F04600D471E1 /* NoxClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoxClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		046F994D20F6F04600D471E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		046F995220F6F04600D471E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		046F995420F6F04700D471E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		046F995720F6F04700D471E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		046F995920F6F04700D471E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046F996020F6F07F00D471E1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		046F996220F6F0AB00D471E1 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		046F996720F6F21D00D471E1 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		046F996920F6FA1E00D471E1 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		046F996B20F6FA3D00D471E1 /* ClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockView.xib; sourceTree = "<group>"; };
+		046F996E20F6FF2900D471E1 /* UIView+AnchorPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AnchorPoint.swift"; sourceTree = "<group>"; };
+		046F997220F70AC700D471E1 /* CommonDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDefine.swift; sourceTree = "<group>"; };
+		046F997420F7108200D471E1 /* ClockObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockObject.swift; sourceTree = "<group>"; };
+		046F997620F7283800D471E1 /* ClockView+ClockObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClockView+ClockObject.swift"; sourceTree = "<group>"; };
+		04E270C620F789F60099FB9F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		04E270CB20F7A7700099FB9F /* Dount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dount.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		046F994720F6F04500D471E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		046F994120F6F04500D471E1 = {
+			isa = PBXGroup;
+			children = (
+				046F994C20F6F04600D471E1 /* NoxClock */,
+				046F994B20F6F04600D471E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		046F994B20F6F04600D471E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				046F994A20F6F04600D471E1 /* NoxClock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		046F994C20F6F04600D471E1 /* NoxClock */ = {
+			isa = PBXGroup;
+			children = (
+				046F994D20F6F04600D471E1 /* AppDelegate.swift */,
+				046F996220F6F0AB00D471E1 /* IndexViewController.swift */,
+				043F942A210031F60052A5D1 /* ClockAlertViewController.swift */,
+				043F942B210031F60052A5D1 /* ClockAlertViewController.xib */,
+				04E270CA20F7A75B0099FB9F /* CustomView */,
+				046F996D20F6FEB000D471E1 /* Extension */,
+				046F996420F6F1F600D471E1 /* Clock */,
+				046F995F20F6F06500D471E1 /* Base */,
+				046F995120F6F04600D471E1 /* Main.storyboard */,
+				046F995420F6F04700D471E1 /* Assets.xcassets */,
+				046F995620F6F04700D471E1 /* LaunchScreen.storyboard */,
+				043F942E210033BA0052A5D1 /* Digital Dismay.otf */,
+				046F995920F6F04700D471E1 /* Info.plist */,
+			);
+			path = NoxClock;
+			sourceTree = "<group>";
+		};
+		046F995F20F6F06500D471E1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				046F996020F6F07F00D471E1 /* BaseViewController.swift */,
+				046F997220F70AC700D471E1 /* CommonDefine.swift */,
+				043F9434210045F40052A5D1 /* SemiCornerButton.swift */,
+				046F996720F6F21D00D471E1 /* XibView.swift */,
+				043F943C2100669D0052A5D1 /* CutomAlertViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		046F996420F6F1F600D471E1 /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				046F997420F7108200D471E1 /* ClockObject.swift */,
+				046F996920F6FA1E00D471E1 /* ClockView.swift */,
+				046F997620F7283800D471E1 /* ClockView+ClockObject.swift */,
+				046F996B20F6FA3D00D471E1 /* ClockView.xib */,
+			);
+			path = Clock;
+			sourceTree = "<group>";
+		};
+		046F996D20F6FEB000D471E1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				046F996E20F6FF2900D471E1 /* UIView+AnchorPoint.swift */,
+				04E270C620F789F60099FB9F /* Color+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		04E270CA20F7A75B0099FB9F /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				04E270CB20F7A7700099FB9F /* Dount.swift */,
+				043F9430210035350052A5D1 /* DigitalClockView.swift */,
+				043F9432210035530052A5D1 /* DigitalClockView.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		046F994920F6F04500D471E1 /* NoxClock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 046F995C20F6F04700D471E1 /* Build configuration list for PBXNativeTarget "NoxClock" */;
+			buildPhases = (
+				046F994620F6F04500D471E1 /* Sources */,
+				046F994720F6F04500D471E1 /* Frameworks */,
+				046F994820F6F04500D471E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoxClock;
+			productName = NoxClock;
+			productReference = 046F994A20F6F04600D471E1 /* NoxClock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		046F994220F6F04500D471E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Nox;
+				TargetAttributes = {
+					046F994920F6F04500D471E1 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 046F994520F6F04500D471E1 /* Build configuration list for PBXProject "NoxClock" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 046F994120F6F04500D471E1;
+			productRefGroup = 046F994B20F6F04600D471E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				046F994920F6F04500D471E1 /* NoxClock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		046F994820F6F04500D471E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046F995820F6F04700D471E1 /* LaunchScreen.storyboard in Resources */,
+				043F942D210031F60052A5D1 /* ClockAlertViewController.xib in Resources */,
+				043F942F210033BA0052A5D1 /* Digital Dismay.otf in Resources */,
+				046F996C20F6FA3D00D471E1 /* ClockView.xib in Resources */,
+				046F995520F6F04700D471E1 /* Assets.xcassets in Resources */,
+				043F9433210035530052A5D1 /* DigitalClockView.xib in Resources */,
+				046F995320F6F04600D471E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		046F994620F6F04500D471E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				043F9431210035350052A5D1 /* DigitalClockView.swift in Sources */,
+				043F942C210031F60052A5D1 /* ClockAlertViewController.swift in Sources */,
+				046F994E20F6F04600D471E1 /* AppDelegate.swift in Sources */,
+				04E270CC20F7A7700099FB9F /* Dount.swift in Sources */,
+				043F943D2100669D0052A5D1 /* CutomAlertViewController.swift in Sources */,
+				043F9435210045F40052A5D1 /* SemiCornerButton.swift in Sources */,
+				046F996F20F6FF2900D471E1 /* UIView+AnchorPoint.swift in Sources */,
+				046F996A20F6FA1E00D471E1 /* ClockView.swift in Sources */,
+				046F997320F70AC700D471E1 /* CommonDefine.swift in Sources */,
+				046F996120F6F07F00D471E1 /* BaseViewController.swift in Sources */,
+				046F996820F6F21D00D471E1 /* XibView.swift in Sources */,
+				046F997720F7283800D471E1 /* ClockView+ClockObject.swift in Sources */,
+				046F996320F6F0AB00D471E1 /* IndexViewController.swift in Sources */,
+				046F997520F7108200D471E1 /* ClockObject.swift in Sources */,
+				04E270C720F789F60099FB9F /* Color+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		046F995120F6F04600D471E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				046F995220F6F04600D471E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		046F995620F6F04700D471E1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				046F995720F6F04700D471E1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		046F995A20F6F04700D471E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		046F995B20F6F04700D471E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		046F995D20F6F04700D471E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 489W34Q3LX;
+				INFOPLIST_FILE = NoxClock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nox.NoxClock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		046F995E20F6F04700D471E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 489W34Q3LX;
+				INFOPLIST_FILE = NoxClock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nox.NoxClock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		046F994520F6F04500D471E1 /* Build configuration list for PBXProject "NoxClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046F995A20F6F04700D471E1 /* Debug */,
+				046F995B20F6F04700D471E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		046F995C20F6F04700D471E1 /* Build configuration list for PBXNativeTarget "NoxClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046F995D20F6F04700D471E1 /* Debug */,
+				046F995E20F6F04700D471E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 046F994220F6F04500D471E1 /* Project object */;
+}

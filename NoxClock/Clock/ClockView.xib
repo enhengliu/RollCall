@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClockView" customModule="NoxClock" customModuleProvider="target">
+            <connections>
+                <outlet property="dountView" destination="8a2-Ks-JCq" id="52O-95-I3b"/>
+                <outlet property="hourHand" destination="gBv-v7-USJ" id="ucT-aq-VGy"/>
+                <outlet property="minuteHand" destination="xxr-Nv-PoF" id="oc4-rq-z2P"/>
+                <outlet property="secondHand" destination="3ed-3c-CfS" id="Jcy-ne-07D"/>
+                <outlet property="testView" destination="qDK-HB-rzg" id="DRf-V9-zo5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="272" height="272"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_dot" translatesAutoresizingMaskIntoConstraints="NO" id="iDp-D7-3AX">
+                    <rect key="frame" x="0.0" y="0.0" width="272" height="272"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDK-HB-rzg">
+                    <rect key="frame" x="16" y="16" width="240" height="240"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qDK-HB-rzg" secondAttribute="height" multiplier="1:1" id="YL4-TD-OrF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8a2-Ks-JCq" customClass="Dount" customModule="NoxClock" customModuleProvider="target">
+                    <rect key="frame" x="16" y="16" width="240" height="240"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8a2-Ks-JCq" secondAttribute="height" multiplier="1:1" id="1US-AT-TgN"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvc-lt-iWQ">
+                    <rect key="frame" x="45" y="45" width="183" height="183"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_hour_hand" translatesAutoresizingMaskIntoConstraints="NO" id="gBv-v7-USJ">
+                            <rect key="frame" x="85" y="63" width="12" height="57"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="gBv-v7-USJ" secondAttribute="height" multiplier="4:19" id="Teo-ic-ZJA"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_minute_hand" translatesAutoresizingMaskIntoConstraints="NO" id="xxr-Nv-PoF">
+                            <rect key="frame" x="89" y="53" width="4" height="76"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="xxr-Nv-PoF" secondAttribute="height" multiplier="1:19" id="IYu-nn-Ehd"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_second_hand" translatesAutoresizingMaskIntoConstraints="NO" id="3ed-3c-CfS">
+                            <rect key="frame" x="88" y="40" width="7" height="103"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3ed-3c-CfS" secondAttribute="height" multiplier="7:103" id="sIw-G2-uMp"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_center" translatesAutoresizingMaskIntoConstraints="NO" id="fam-Va-qMS">
+                            <rect key="frame" x="85.5" y="85.5" width="12" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="fam-Va-qMS" secondAttribute="height" multiplier="1:1" id="ywx-fB-vFu"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="fam-Va-qMS" firstAttribute="centerY" secondItem="Mvc-lt-iWQ" secondAttribute="centerY" id="0pQ-xj-jGc"/>
+                        <constraint firstItem="3ed-3c-CfS" firstAttribute="height" secondItem="Mvc-lt-iWQ" secondAttribute="height" multiplier="103/183" id="3OL-bh-T84"/>
+                        <constraint firstItem="gBv-v7-USJ" firstAttribute="centerX" secondItem="Mvc-lt-iWQ" secondAttribute="centerX" id="5uU-YG-yPF"/>
+                        <constraint firstItem="3ed-3c-CfS" firstAttribute="centerY" secondItem="Mvc-lt-iWQ" secondAttribute="centerY" id="Aok-Er-U23"/>
+                        <constraint firstItem="gBv-v7-USJ" firstAttribute="centerY" secondItem="Mvc-lt-iWQ" secondAttribute="centerY" id="Fai-eo-kjB"/>
+                        <constraint firstItem="gBv-v7-USJ" firstAttribute="height" secondItem="Mvc-lt-iWQ" secondAttribute="height" multiplier="57/183" id="YX4-oc-HMO"/>
+                        <constraint firstItem="xxr-Nv-PoF" firstAttribute="height" secondItem="Mvc-lt-iWQ" secondAttribute="height" multiplier="76/183" id="a5X-b5-6RU"/>
+                        <constraint firstItem="xxr-Nv-PoF" firstAttribute="centerX" secondItem="Mvc-lt-iWQ" secondAttribute="centerX" id="cnR-e4-Xy6"/>
+                        <constraint firstItem="fam-Va-qMS" firstAttribute="height" secondItem="Mvc-lt-iWQ" secondAttribute="height" multiplier="12/183" id="fcN-ob-sqC"/>
+                        <constraint firstAttribute="width" secondItem="Mvc-lt-iWQ" secondAttribute="height" multiplier="1:1" id="jNB-MA-ylC"/>
+                        <constraint firstItem="xxr-Nv-PoF" firstAttribute="centerY" secondItem="Mvc-lt-iWQ" secondAttribute="centerY" id="reh-Od-Yen"/>
+                        <constraint firstItem="3ed-3c-CfS" firstAttribute="centerX" secondItem="Mvc-lt-iWQ" secondAttribute="centerX" id="xzL-zO-n7i"/>
+                        <constraint firstItem="fam-Va-qMS" firstAttribute="centerX" secondItem="Mvc-lt-iWQ" secondAttribute="centerX" id="y5Q-G8-WKS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8a2-Ks-JCq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4Ro-2x-sTe"/>
+                <constraint firstItem="8a2-Ks-JCq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ErG-XX-xV9"/>
+                <constraint firstItem="Mvc-lt-iWQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FIM-Fv-K8y"/>
+                <constraint firstItem="8a2-Ks-JCq" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="240/272" id="MBm-Do-cEv"/>
+                <constraint firstItem="iDp-D7-3AX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="PEm-Ee-UGk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="iDp-D7-3AX" secondAttribute="bottom" id="R65-1g-eAm"/>
+                <constraint firstItem="Mvc-lt-iWQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WM7-am-HeJ"/>
+                <constraint firstItem="qDK-HB-rzg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WuS-Qh-fVP"/>
+                <constraint firstItem="qDK-HB-rzg" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="240/272" id="ftc-pF-B3s"/>
+                <constraint firstItem="iDp-D7-3AX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="g2x-Q3-9ag"/>
+                <constraint firstItem="Mvc-lt-iWQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="183/272" id="hRV-OZ-D2g"/>
+                <constraint firstItem="qDK-HB-rzg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="l33-Jb-wc1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iDp-D7-3AX" secondAttribute="trailing" id="n2U-ej-hrw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33" y="-107"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="clock_center" width="12" height="12"/>
+        <image name="clock_dot" width="273" height="272"/>
+        <image name="clock_hour_hand" width="12" height="57"/>
+        <image name="clock_minute_hand" width="4" height="76"/>
+        <image name="clock_second_hand" width="7" height="103"/>
+    </resources>
+</document>
