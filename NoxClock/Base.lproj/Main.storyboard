@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,6 +12,179 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="H1D-qa-cJF">
+            <objects>
+                <viewController id="qlr-Lv-iZ1" customClass="LoginViewController" customModule="NoxClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qNf-WK-FZa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFv-Vy-fVa" customClass="GradientView" customModule="NoxClock" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.27450980392156865" green="0.77254901960784317" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.87058823529411766" green="0.91764705882352937" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="0.94999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awO-wW-unv">
+                                <rect key="frame" x="47.5" y="60" width="280" height="547"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-lc-sGy">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="415"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Bpt-ab-mBM">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="91.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4o-YE-Rll">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="62"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Thin" family="PingFang TC" pointSize="44"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sr-OO-VSE">
+                                                        <rect key="frame" x="0.0" y="62" width="280" height="29.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="21"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1E-Jw-pR4">
+                                                <rect key="frame" x="0.0" y="91.5" width="280" height="0.0"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="nub-VV-IKy"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="MJi-Pi-fSM">
+                                                <rect key="frame" x="0.0" y="91.5" width="280" height="323.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTk-vX-pGM" customClass="SimpleTextField" customModule="NoxClock" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="TwW-Pe-k1B"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="請輸入帳號(Email)"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="contentColor">
+                                                                <color key="value" red="1" green="0.8784313725490196" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtv-ir-4nK" customClass="SimpleTextField" customModule="NoxClock" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="88" width="280" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="XoB-q9-Ms4"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="請輸入密碼"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="contentColor">
+                                                                <color key="value" red="1" green="0.87843137250000003" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="sYf-4h-yYn">
+                                                        <rect key="frame" x="0.0" y="176" width="280" height="147.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeo-ZR-Frl" customClass="SemiCornerButton" customModule="NoxClock" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="56"/>
+                                                                <color key="backgroundColor" red="0.91764705882352937" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="56" id="ngr-Ax-dUT"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
+                                                                <state key="normal" title="登入"/>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYH-gA-uNx">
+                                                                <rect key="frame" x="0.0" y="59" width="280" height="29.5"/>
+                                                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="21"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6G4-pB-2pn" customClass="SemiCornerButton" customModule="NoxClock" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="91.5" width="280" height="56"/>
+                                                                <color key="backgroundColor" red="0.91764705879999997" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="56" id="Iod-D6-PMI"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
+                                                                <state key="normal" title=" 使用Google登入" image="google_logo"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="6G4-pB-2pn" firstAttribute="height" secondItem="qeo-ZR-Frl" secondAttribute="height" id="m3a-y8-wWN"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="547" id="1mq-i9-ElA"/>
+                                    <constraint firstItem="KcC-lc-sGy" firstAttribute="leading" secondItem="awO-wW-unv" secondAttribute="leading" id="KhK-Cd-NMp"/>
+                                    <constraint firstItem="KcC-lc-sGy" firstAttribute="top" secondItem="awO-wW-unv" secondAttribute="top" id="Ysc-NS-yn9"/>
+                                    <constraint firstAttribute="bottom" secondItem="KcC-lc-sGy" secondAttribute="bottom" id="Z6f-db-594"/>
+                                    <constraint firstAttribute="trailing" secondItem="KcC-lc-sGy" secondAttribute="trailing" id="qZw-gI-Cnh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="awO-wW-unv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TYs-Xv-73N" secondAttribute="top" constant="40" id="4vx-8B-hrr"/>
+                            <constraint firstItem="awO-wW-unv" firstAttribute="width" secondItem="qNf-WK-FZa" secondAttribute="width" multiplier="280/375" id="IWJ-od-qFE"/>
+                            <constraint firstItem="TYs-Xv-73N" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="awO-wW-unv" secondAttribute="trailing" constant="10" id="KVZ-kM-rci"/>
+                            <constraint firstItem="WFv-Vy-fVa" firstAttribute="leading" secondItem="TYs-Xv-73N" secondAttribute="leading" id="Oac-WV-D62"/>
+                            <constraint firstItem="KcC-lc-sGy" firstAttribute="width" secondItem="qNf-WK-FZa" secondAttribute="width" multiplier="280/375" id="Riw-tW-2TI"/>
+                            <constraint firstItem="WFv-Vy-fVa" firstAttribute="bottom" secondItem="qNf-WK-FZa" secondAttribute="bottom" id="Wza-U7-4fZ"/>
+                            <constraint firstItem="WFv-Vy-fVa" firstAttribute="trailing" secondItem="TYs-Xv-73N" secondAttribute="trailing" id="glu-Fp-slD"/>
+                            <constraint firstItem="WFv-Vy-fVa" firstAttribute="top" secondItem="qNf-WK-FZa" secondAttribute="top" id="lF3-Xv-Rhx"/>
+                            <constraint firstItem="awO-wW-unv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TYs-Xv-73N" secondAttribute="leading" constant="10" id="nFS-zK-1g0"/>
+                            <constraint firstItem="TYs-Xv-73N" firstAttribute="bottom" secondItem="awO-wW-unv" secondAttribute="bottom" priority="750" constant="60" id="pI4-uI-JGf"/>
+                            <constraint firstItem="TYs-Xv-73N" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="awO-wW-unv" secondAttribute="bottom" constant="60" id="sge-Uz-geh"/>
+                            <constraint firstItem="awO-wW-unv" firstAttribute="top" secondItem="TYs-Xv-73N" secondAttribute="top" priority="750" constant="40" id="tNe-Kh-fD5"/>
+                            <constraint firstItem="awO-wW-unv" firstAttribute="centerX" secondItem="qNf-WK-FZa" secondAttribute="centerX" id="tOB-hb-Woe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TYs-Xv-73N"/>
+                    </view>
+                    <connections>
+                        <outlet property="accountTextField" destination="hTk-vX-pGM" id="cgS-Rd-BRG"/>
+                        <outlet property="mainScrollView" destination="awO-wW-unv" id="Lz9-jD-QAQ"/>
+                        <outlet property="paddingViewHConstraint" destination="nub-VV-IKy" id="dCb-GD-Z62"/>
+                        <outlet property="pwdTextField" destination="wtv-ir-4nK" id="fWT-9h-9vt"/>
+                        <outlet property="scrollViewContentHeightConstraint" destination="1mq-i9-ElA" id="ALa-kU-qT1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxq-QV-Pdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-776.79999999999995" y="36.431784107946029"/>
+        </scene>
         <!--Index View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -20,16 +193,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKi-pu-pT5">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKi-pu-pT5" customClass="GradientView" customModule="NoxClock" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="snI-Iz-FBe" customClass="ClockView" customModule="NoxClock" customModuleProvider="target">
+                                        <rect key="frame" x="51" y="130" width="272" height="272"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="snI-Iz-FBe" secondAttribute="height" multiplier="1:1" id="v4i-3p-fax"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="snI-Iz-FBe" customClass="ClockView" customModule="NoxClock" customModuleProvider="target">
-                                <rect key="frame" x="51" y="130" width="272" height="272"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="snI-Iz-FBe" secondAttribute="height" multiplier="1:1" id="v4i-3p-fax"/>
+                                    <constraint firstItem="snI-Iz-FBe" firstAttribute="width" secondItem="oKi-pu-pT5" secondAttribute="width" multiplier="272/375" id="5KD-8s-Unf"/>
+                                    <constraint firstItem="snI-Iz-FBe" firstAttribute="centerX" secondItem="oKi-pu-pT5" secondAttribute="centerX" id="BIK-5T-KH2"/>
+                                    <constraint firstItem="snI-Iz-FBe" firstAttribute="top" secondItem="oKi-pu-pT5" secondAttribute="bottom" multiplier="130/667" id="YMg-vz-AwS"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.27450980390000002" green="0.7725490196" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.87058823529999996" green="0.91764705879999997" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="0.94999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJJ-GY-5Lu">
                                 <rect key="frame" x="147" y="498" width="80" height="80"/>
@@ -80,14 +274,11 @@
                             <constraint firstItem="Twm-2S-nQL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="57k-xH-OXw"/>
                             <constraint firstItem="oKi-pu-pT5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="84f-e2-GRJ"/>
                             <constraint firstItem="AJJ-GY-5Lu" firstAttribute="top" secondItem="Twm-2S-nQL" secondAttribute="bottom" constant="13" id="8bW-bN-ryO"/>
-                            <constraint firstItem="snI-Iz-FBe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="272/375" id="AkH-7W-wwA"/>
                             <constraint firstItem="AJJ-GY-5Lu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Axu-P9-uwB"/>
                             <constraint firstItem="oKi-pu-pT5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VsZ-YE-jv3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AJJ-GY-5Lu" secondAttribute="bottom" constant="89" id="cMr-E9-GAd"/>
                             <constraint firstItem="oKi-pu-pT5" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="f5E-5C-97S"/>
                             <constraint firstItem="oKi-pu-pT5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gaW-PX-S9A"/>
-                            <constraint firstItem="snI-Iz-FBe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="bottom" multiplier="130/667" id="ikB-IK-BGh"/>
-                            <constraint firstItem="snI-Iz-FBe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ks4-Pa-B3z"/>
                             <constraint firstItem="AJJ-GY-5Lu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="80/375" id="lp6-Yn-5OF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -107,5 +298,6 @@
     </scenes>
     <resources>
         <image name="clock_in_btn" width="80" height="80"/>
+        <image name="google_logo" width="16" height="16"/>
     </resources>
 </document>

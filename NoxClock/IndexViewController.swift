@@ -8,13 +8,19 @@
 
 import UIKit
 
-class IndexViewController: BaseViewController {
+enum IndexViewStatus {
+    case ClockIn
+    case ClockOut
+}
+
+class IndexViewController: BaseViewController,ClockAlertViewControllerDelegate {
 
     @IBOutlet var clockView: ClockView!
     @IBOutlet var clockInBtn: UIButton!
-    @IBOutlet var gradientView: UIView!
+    @IBOutlet var gradientView: GradientView!
     @IBOutlet var clockInDisplayLabelView: UIView!
     @IBOutlet var clockInDisplayLabel: UILabel!
+    public var status:IndexViewStatus = IndexViewStatus.ClockIn;
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -37,12 +43,6 @@ class IndexViewController: BaseViewController {
         clockInBtn.layer.shadowOffset = CGSize(width: 7, height: 7);
         clockInBtn.layer.shadowRadius = 19.0;
         clockInBtn.layer.shadowOpacity = 0.2;
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0);
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.9);
-        gradientLayer.colors = [UIColor.init(hex: "DE5858").cgColor, UIColor.init(hex: "E8BA81").cgColor]
-        self.gradientView.layer.addSublayer(gradientLayer)
         clockInDisplayLabelView.layer.cornerRadius = clockInDisplayLabelView.bounds.size.height/2;
         clockInDisplayLabelView.layer.masksToBounds = true;
     }
@@ -70,7 +70,7 @@ class IndexViewController: BaseViewController {
     @IBAction func clockInBtnOnTouchUpInside(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
-        self.changeUIStatus();
+        self.showAlertView();
         UIView.animate(withDuration: 0.1,
                        animations: {
                         sender.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
@@ -87,7 +87,7 @@ class IndexViewController: BaseViewController {
     
     private func changeUIStatus() {
         
-        if clockInBtn.isSelected {
+        if self.status == IndexViewStatus.ClockOut {
             
             clockView.clockIn();
             clockInBtn.setImage(UIImage(named: "clock_out_btn"), for: UIControlState.normal);
@@ -99,6 +99,35 @@ class IndexViewController: BaseViewController {
             clockInBtn.setImage(UIImage(named: "clock_in_btn"), for: UIControlState.normal);
             clockInDisplayLabelView.backgroundColor = UIColor.init(hex: "E04F4F").alpha(0.4);
             clockInDisplayLabel.text = "上班";
+        }
+    }
+    
+    private func showAlertView () {
+        
+        let clockAlertViewController:ClockAlertViewController = ClockAlertViewController(nibName: "ClockAlertViewController", bundle: nil);
+        clockAlertViewController.status = self.status == IndexViewStatus.ClockIn ? ClockAlertViewStatus.ClockIn:ClockAlertViewStatus.ClockOut;
+        clockAlertViewController.delegate = self;
+        clockAlertViewController.showInViewController(self);
+    }
+    
+    //MARK: - CutomAlertViewControllerDelegate
+    
+    func cutomAlertViewControllerDidSuccess(_ controller: CutomAlertViewController, cutomAlertViewStatus: ClockAlertViewStatus) {
+        
+        switch cutomAlertViewStatus {
+        case .ClockIn:
+            self.status = IndexViewStatus.ClockOut;
+            self.changeUIStatus();
+            clockView.removePin();
+            clockView.addPin();
+            break;
+            
+        case .ClockOut:
+            self.status = IndexViewStatus.ClockIn;
+            self.changeUIStatus();
+            clockView.addPin();
+            break;
+
         }
     }
 }

@@ -14,4 +14,10 @@ class CommonDefine: NSObject {
     
         return degree * CGFloat.pi / 180;
     }
+    
+    static public var FontPingFangTCRegular:String = "PingFangTC-Regular"
+    static public var FontPingFangTCMedium:String = "PingFangTC-Medium"
+    static public var FontPingFangTCLight:String = "PingFangTC-Light"
+    static public var FontPingFangTCThin:String = "PingFangTC-Thin"
+    static public var FontPingFangTCSemibold:String = "PingFangTC-Semibold"
 }

@@ -24,16 +24,25 @@ class DigitalClockView: XibView {
     @IBOutlet private var topConstraint: NSLayoutConstraint!
     @IBOutlet private var placeholderView: UIStackView!
     
+    private var _second:Int = 0;
+    private var _minute:Int = 0;
+    private var _hour:Int = 0;
+    private var _hiddenPlaceholder:Bool = false;
+    private var _hiddenDisplayName:Bool = false;
+    private var _digitalFontSize:CGFloat = 0;
+    private var _edgeInsets:UIEdgeInsets = UIEdgeInsets.zero;
+
+
     public var second:Int {
         
         get {
             
-            return self.second;
+            return _second;
         }
         
         set{
             
-            self.second = newValue;
+            _second = newValue;
             secondNumberLabel.text = String(format: "%02d", newValue);
         }
     }
@@ -42,12 +51,12 @@ class DigitalClockView: XibView {
         
         get {
             
-            return self.minute;
+            return _minute;
         }
         
         set{
             
-            self.minute = newValue;
+            _minute = newValue;
             minuteNumberLabel.text = String(format: "%02d", newValue);
         }
     }
@@ -56,12 +65,12 @@ class DigitalClockView: XibView {
         
         get {
             
-            return self.hour;
+            return _hour;
         }
         
         set{
             
-            self.hour = newValue;
+            _hour = newValue;
             hourNumberLabel.text = String(format: "%02d", newValue);
         }
     }
@@ -70,12 +79,12 @@ class DigitalClockView: XibView {
         
         get {
             
-            return self.hiddenPlaceholder;
+            return _hiddenPlaceholder;
         }
         
         set{
             
-            self.hiddenPlaceholder = newValue;
+            _hiddenPlaceholder = newValue;
             placeholderView.isHidden = newValue;
         }
     }
@@ -84,28 +93,28 @@ class DigitalClockView: XibView {
         
         get {
             
-            return self.hiddenDisplayName;
+            return _hiddenDisplayName;
         }
         
         set{
             
-            self.hiddenDisplayName = newValue;
+            _hiddenDisplayName = newValue;
             secondNameLabel.isHidden = newValue;
             minuteNameLabel.isHidden = newValue;
             hourNameLabel.isHidden = newValue;
         }
     }
     
-    public var digitalFont:CGFloat {
+    public var digitalFontSize:CGFloat {
         
         get {
             
-            return self.digitalFont;
+            return _digitalFontSize;
         }
         
         set{
             
-            self.digitalFont = newValue;
+            _digitalFontSize = newValue;
             secondNumberLabel.font.withSize(newValue);
             minuteNumberLabel.font.withSize(newValue);
             hourNumberLabel.font.withSize(newValue);
@@ -116,12 +125,12 @@ class DigitalClockView: XibView {
         
         get {
             
-            return self.edgeInsets;
+            return _edgeInsets;
         }
         
         set{
 
-            self.edgeInsets = newValue;
+            _edgeInsets = newValue;
             bottomConstraint.constant = newValue.bottom;
             topConstraint.constant = newValue.top;
             leadingConstraint.constant = newValue.left;

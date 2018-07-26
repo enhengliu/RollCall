@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SimpleTextField" customModule="NoxClock" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomConstraint" destination="oLM-IP-STR" id="vej-vI-iLn"/>
+                <outlet property="leadingConstraint" destination="WRI-MZ-eNt" id="dL8-Hk-l3F"/>
+                <outlet property="mainTextField" destination="LWq-Sj-JkL" id="mkg-Dc-fFx"/>
+                <outlet property="separatorView" destination="j11-hC-hjz" id="sCU-XQ-hYm"/>
+                <outlet property="topConstraint" destination="7PG-f8-fnO" id="i9E-Me-gz6"/>
+                <outlet property="trailingConstraint" destination="TjS-sN-Ug6" id="PhN-jV-Dbq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIQ-JF-XB1">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入帳號(Email)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LWq-Sj-JkL">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="19"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j11-hC-hjz">
+                            <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="XiD-du-ape"/>
+                                <constraint firstAttribute="height" constant="1" id="gBd-Ed-9wf"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="j11-hC-hjz" secondAttribute="trailing" id="1ND-bl-RGZ"/>
+                        <constraint firstItem="LWq-Sj-JkL" firstAttribute="top" secondItem="rIQ-JF-XB1" secondAttribute="top" id="3Zh-dC-HG7"/>
+                        <constraint firstItem="j11-hC-hjz" firstAttribute="leading" secondItem="rIQ-JF-XB1" secondAttribute="leading" id="B5I-Lv-gE1"/>
+                        <constraint firstItem="LWq-Sj-JkL" firstAttribute="leading" secondItem="rIQ-JF-XB1" secondAttribute="leading" id="RcF-zW-oJ6"/>
+                        <constraint firstAttribute="bottom" secondItem="LWq-Sj-JkL" secondAttribute="bottom" id="ijr-wu-aib"/>
+                        <constraint firstAttribute="trailing" secondItem="LWq-Sj-JkL" secondAttribute="trailing" id="w1b-Wh-0rX"/>
+                        <constraint firstAttribute="bottom" secondItem="j11-hC-hjz" secondAttribute="bottom" id="xLX-kk-Bp4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="rIQ-JF-XB1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="7PG-f8-fnO"/>
+                <constraint firstItem="rIQ-JF-XB1" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="TjS-sN-Ug6"/>
+                <constraint firstItem="rIQ-JF-XB1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WRI-MZ-eNt"/>
+                <constraint firstItem="rIQ-JF-XB1" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="oLM-IP-STR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="-242"/>
+        </view>
+    </objects>
+</document>

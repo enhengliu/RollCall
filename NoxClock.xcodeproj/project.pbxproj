@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0405B3552109D552002DE036 /* SlashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405B3542109D552002DE036 /* SlashViewController.swift */; };
 		043F942C210031F60052A5D1 /* ClockAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F942A210031F60052A5D1 /* ClockAlertViewController.swift */; };
 		043F942D210031F60052A5D1 /* ClockAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043F942B210031F60052A5D1 /* ClockAlertViewController.xib */; };
 		043F942F210033BA0052A5D1 /* Digital Dismay.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043F942E210033BA0052A5D1 /* Digital Dismay.otf */; };
@@ -14,10 +15,13 @@
 		043F9433210035530052A5D1 /* DigitalClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043F9432210035530052A5D1 /* DigitalClockView.xib */; };
 		043F9435210045F40052A5D1 /* SemiCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F9434210045F40052A5D1 /* SemiCornerButton.swift */; };
 		043F943D2100669D0052A5D1 /* CutomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F943C2100669D0052A5D1 /* CutomAlertViewController.swift */; };
+		046D07392109DE9400D5AEC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046D07382109DE9400D5AEC1 /* LaunchScreen.storyboard */; };
+		046D073B2109EB8A00D5AEC1 /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D073A2109EB8A00D5AEC1 /* SimpleTextField.swift */; };
+		046D073D2109EB9B00D5AEC1 /* SimpleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D073C2109EB9B00D5AEC1 /* SimpleTextField.xib */; };
+		046D073F210A09A800D5AEC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D073E210A09A800D5AEC1 /* LoginViewController.swift */; };
 		046F994E20F6F04600D471E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F994D20F6F04600D471E1 /* AppDelegate.swift */; };
 		046F995320F6F04600D471E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F995120F6F04600D471E1 /* Main.storyboard */; };
 		046F995520F6F04700D471E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046F995420F6F04700D471E1 /* Assets.xcassets */; };
-		046F995820F6F04700D471E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F995620F6F04700D471E1 /* LaunchScreen.storyboard */; };
 		046F996120F6F07F00D471E1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F996020F6F07F00D471E1 /* BaseViewController.swift */; };
 		046F996320F6F0AB00D471E1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F996220F6F0AB00D471E1 /* IndexViewController.swift */; };
 		046F996820F6F21D00D471E1 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F996720F6F21D00D471E1 /* XibView.swift */; };
@@ -27,11 +31,14 @@
 		046F997320F70AC700D471E1 /* CommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F997220F70AC700D471E1 /* CommonDefine.swift */; };
 		046F997520F7108200D471E1 /* ClockObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F997420F7108200D471E1 /* ClockObject.swift */; };
 		046F997720F7283800D471E1 /* ClockView+ClockObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F997620F7283800D471E1 /* ClockView+ClockObject.swift */; };
+		047CD7A52109D02200F8013A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CD7A42109D02200F8013A /* GradientView.swift */; };
 		04E270C720F789F60099FB9F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E270C620F789F60099FB9F /* Color+Extension.swift */; };
 		04E270CC20F7A7700099FB9F /* Dount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E270CB20F7A7700099FB9F /* Dount.swift */; };
+		4E4D80BC9818FFEFEE14C9C8 /* Pods_NoxClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727F7BB8C7AF38F6C6D580F2 /* Pods_NoxClock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0405B3542109D552002DE036 /* SlashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlashViewController.swift; sourceTree = "<group>"; };
 		043F942A210031F60052A5D1 /* ClockAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockAlertViewController.swift; sourceTree = "<group>"; };
 		043F942B210031F60052A5D1 /* ClockAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockAlertViewController.xib; sourceTree = "<group>"; };
 		043F942E210033BA0052A5D1 /* Digital Dismay.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Digital Dismay.otf"; sourceTree = "<group>"; };
@@ -39,11 +46,14 @@
 		043F9432210035530052A5D1 /* DigitalClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DigitalClockView.xib; sourceTree = "<group>"; };
 		043F9434210045F40052A5D1 /* SemiCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiCornerButton.swift; sourceTree = "<group>"; };
 		043F943C2100669D0052A5D1 /* CutomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutomAlertViewController.swift; sourceTree = "<group>"; };
+		046D07382109DE9400D5AEC1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		046D073A2109EB8A00D5AEC1 /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
+		046D073C2109EB9B00D5AEC1 /* SimpleTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleTextField.xib; sourceTree = "<group>"; };
+		046D073E210A09A800D5AEC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		046F994A20F6F04600D471E1 /* NoxClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoxClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046F994D20F6F04600D471E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046F995220F6F04600D471E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		046F995420F6F04700D471E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		046F995720F6F04700D471E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		046F995920F6F04700D471E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		046F996020F6F07F00D471E1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		046F996220F6F0AB00D471E1 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +64,12 @@
 		046F997220F70AC700D471E1 /* CommonDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDefine.swift; sourceTree = "<group>"; };
 		046F997420F7108200D471E1 /* ClockObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockObject.swift; sourceTree = "<group>"; };
 		046F997620F7283800D471E1 /* ClockView+ClockObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClockView+ClockObject.swift"; sourceTree = "<group>"; };
+		047CD7A42109D02200F8013A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		04E270C620F789F60099FB9F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		04E270CB20F7A7700099FB9F /* Dount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dount.swift; sourceTree = "<group>"; };
+		56B7FE0CF1020E064761BB40 /* Pods-NoxClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoxClock.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoxClock/Pods-NoxClock.release.xcconfig"; sourceTree = "<group>"; };
+		727F7BB8C7AF38F6C6D580F2 /* Pods_NoxClock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoxClock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B18070F4DEE2A65D5F97BC /* Pods-NoxClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoxClock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoxClock/Pods-NoxClock.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4D80BC9818FFEFEE14C9C8 /* Pods_NoxClock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +89,8 @@
 			children = (
 				046F994C20F6F04600D471E1 /* NoxClock */,
 				046F994B20F6F04600D471E1 /* Products */,
+				C2AC5B73E51AD0353734C449 /* Pods */,
+				6B1793E7CED4041028FFC757 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +108,8 @@
 				046F994D20F6F04600D471E1 /* AppDelegate.swift */,
 				046F996220F6F0AB00D471E1 /* IndexViewController.swift */,
 				043F942A210031F60052A5D1 /* ClockAlertViewController.swift */,
+				0405B3542109D552002DE036 /* SlashViewController.swift */,
+				046D073E210A09A800D5AEC1 /* LoginViewController.swift */,
 				043F942B210031F60052A5D1 /* ClockAlertViewController.xib */,
 				04E270CA20F7A75B0099FB9F /* CustomView */,
 				046F996D20F6FEB000D471E1 /* Extension */,
@@ -98,7 +117,7 @@
 				046F995F20F6F06500D471E1 /* Base */,
 				046F995120F6F04600D471E1 /* Main.storyboard */,
 				046F995420F6F04700D471E1 /* Assets.xcassets */,
-				046F995620F6F04700D471E1 /* LaunchScreen.storyboard */,
+				046D07382109DE9400D5AEC1 /* LaunchScreen.storyboard */,
 				043F942E210033BA0052A5D1 /* Digital Dismay.otf */,
 				046F995920F6F04700D471E1 /* Info.plist */,
 			);
@@ -140,11 +159,31 @@
 		04E270CA20F7A75B0099FB9F /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				047CD7A42109D02200F8013A /* GradientView.swift */,
 				04E270CB20F7A7700099FB9F /* Dount.swift */,
 				043F9430210035350052A5D1 /* DigitalClockView.swift */,
 				043F9432210035530052A5D1 /* DigitalClockView.xib */,
+				046D073A2109EB8A00D5AEC1 /* SimpleTextField.swift */,
+				046D073C2109EB9B00D5AEC1 /* SimpleTextField.xib */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		6B1793E7CED4041028FFC757 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				727F7BB8C7AF38F6C6D580F2 /* Pods_NoxClock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2AC5B73E51AD0353734C449 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0B18070F4DEE2A65D5F97BC /* Pods-NoxClock.debug.xcconfig */,
+				56B7FE0CF1020E064761BB40 /* Pods-NoxClock.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 046F995C20F6F04700D471E1 /* Build configuration list for PBXNativeTarget "NoxClock" */;
 			buildPhases = (
+				28A069CA01B8E015CC14477F /* [CP] Check Pods Manifest.lock */,
 				046F994620F6F04500D471E1 /* Sources */,
 				046F994720F6F04500D471E1 /* Frameworks */,
 				046F994820F6F04500D471E1 /* Resources */,
+				9FE4A9C35E7465DFB513C6B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,17 +246,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046F995820F6F04700D471E1 /* LaunchScreen.storyboard in Resources */,
 				043F942D210031F60052A5D1 /* ClockAlertViewController.xib in Resources */,
 				043F942F210033BA0052A5D1 /* Digital Dismay.otf in Resources */,
 				046F996C20F6FA3D00D471E1 /* ClockView.xib in Resources */,
 				046F995520F6F04700D471E1 /* Assets.xcassets in Resources */,
+				046D07392109DE9400D5AEC1 /* LaunchScreen.storyboard in Resources */,
 				043F9433210035530052A5D1 /* DigitalClockView.xib in Resources */,
 				046F995320F6F04600D471E1 /* Main.storyboard in Resources */,
+				046D073D2109EB9B00D5AEC1 /* SimpleTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28A069CA01B8E015CC14477F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NoxClock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FE4A9C35E7465DFB513C6B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NoxClock/Pods-NoxClock-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NoxClock/Pods-NoxClock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		046F994620F6F04500D471E1 /* Sources */ = {
@@ -226,11 +307,15 @@
 				043F942C210031F60052A5D1 /* ClockAlertViewController.swift in Sources */,
 				046F994E20F6F04600D471E1 /* AppDelegate.swift in Sources */,
 				04E270CC20F7A7700099FB9F /* Dount.swift in Sources */,
+				046D073F210A09A800D5AEC1 /* LoginViewController.swift in Sources */,
 				043F943D2100669D0052A5D1 /* CutomAlertViewController.swift in Sources */,
 				043F9435210045F40052A5D1 /* SemiCornerButton.swift in Sources */,
+				047CD7A52109D02200F8013A /* GradientView.swift in Sources */,
+				046D073B2109EB8A00D5AEC1 /* SimpleTextField.swift in Sources */,
 				046F996F20F6FF2900D471E1 /* UIView+AnchorPoint.swift in Sources */,
 				046F996A20F6FA1E00D471E1 /* ClockView.swift in Sources */,
 				046F997320F70AC700D471E1 /* CommonDefine.swift in Sources */,
+				0405B3552109D552002DE036 /* SlashViewController.swift in Sources */,
 				046F996120F6F07F00D471E1 /* BaseViewController.swift in Sources */,
 				046F996820F6F21D00D471E1 /* XibView.swift in Sources */,
 				046F997720F7283800D471E1 /* ClockView+ClockObject.swift in Sources */,
@@ -249,14 +334,6 @@
 				046F995220F6F04600D471E1 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		046F995620F6F04700D471E1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				046F995720F6F04700D471E1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -378,11 +455,13 @@
 		};
 		046F995D20F6F04700D471E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B18070F4DEE2A65D5F97BC /* Pods-NoxClock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489W34Q3LX;
 				INFOPLIST_FILE = NoxClock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,17 +469,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nox.NoxClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		046F995E20F6F04700D471E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56B7FE0CF1020E064761BB40 /* Pods-NoxClock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489W34Q3LX;
 				INFOPLIST_FILE = NoxClock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +489,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nox.NoxClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
