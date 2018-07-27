@@ -8,6 +8,9 @@
 
 import UIKit
 import KVOController
+import Alamofire
+import MBProgressHUD
+import SwiftyJSON
 
 class LoginViewController: BaseViewController {
 
@@ -76,5 +79,70 @@ class LoginViewController: BaseViewController {
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         
         self.view.endEditing(true);
+    }
+    
+    //MARK: - Button Method
+    
+    @IBAction func loginBtnOnPress(_ sender: Any) {
+        
+        self.login();
+    }
+    
+    @IBAction func googleLoginBtnOnPress(_ sender: Any) {
+        
+        self.login();
+    }
+    
+    //MARK: - API Method
+    
+    func login() {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        Alamofire.request("http://220.130.130.109:3211/api/employee/005", method: .get, parameters: nil)
+            .responseJSON { response in
+                
+                MBProgressHUD.hide(for: self.view, animated: true)
+                switch(response.result) {
+                case .success(_):
+                    if let data = response.result.value{
+                        
+                        let jsonObject = JSON(data)
+                        let employeeSimpleInfoData:EmployeeSimpleInfoData = EmployeeSimpleInfoData(parameter: jsonObject["data"]);
+                        employeeSimpleInfoData.punchInfo.map {
+                            print($0.punchDate)
+                            print($0.punchContent)
+                        }
+                    }
+                    self.gotoIndexViewController();
+                case .failure(_):
+                    
+                    print("Error message:\(response.result.error)")
+                    break
+                }
+            }
+    }
+    
+    //MARK: - Other View
+    
+    func gotoIndexViewController()  {
+        
+        guard let window = UIApplication.shared.keyWindow else {
+            return
+        }
+        
+        guard let rootViewController = window.rootViewController else {
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "IndexViewController")
+        vc.view.frame = rootViewController.view.frame
+        vc.view.layoutIfNeeded()
+        
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = vc
+        }, completion: { completed in
+
+        })
     }
 }

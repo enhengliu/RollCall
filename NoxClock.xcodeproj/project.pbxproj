@@ -32,6 +32,9 @@
 		046F997520F7108200D471E1 /* ClockObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F997420F7108200D471E1 /* ClockObject.swift */; };
 		046F997720F7283800D471E1 /* ClockView+ClockObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F997620F7283800D471E1 /* ClockView+ClockObject.swift */; };
 		047CD7A52109D02200F8013A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CD7A42109D02200F8013A /* GradientView.swift */; };
+		04896F3C210AC3610005E21C /* BaseModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04896F3B210AC3610005E21C /* BaseModelProtocol.swift */; };
+		04896F3F210AC3D70005E21C /* EmployeeSimpleInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04896F3E210AC3D70005E21C /* EmployeeSimpleInfoData.swift */; };
+		04896F41210AC8B90005E21C /* PunchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04896F40210AC8B90005E21C /* PunchData.swift */; };
 		04E270C720F789F60099FB9F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E270C620F789F60099FB9F /* Color+Extension.swift */; };
 		04E270CC20F7A7700099FB9F /* Dount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E270CB20F7A7700099FB9F /* Dount.swift */; };
 		4E4D80BC9818FFEFEE14C9C8 /* Pods_NoxClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727F7BB8C7AF38F6C6D580F2 /* Pods_NoxClock.framework */; };
@@ -65,6 +68,9 @@
 		046F997420F7108200D471E1 /* ClockObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockObject.swift; sourceTree = "<group>"; };
 		046F997620F7283800D471E1 /* ClockView+ClockObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClockView+ClockObject.swift"; sourceTree = "<group>"; };
 		047CD7A42109D02200F8013A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		04896F3B210AC3610005E21C /* BaseModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModelProtocol.swift; sourceTree = "<group>"; };
+		04896F3E210AC3D70005E21C /* EmployeeSimpleInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeSimpleInfoData.swift; sourceTree = "<group>"; };
+		04896F40210AC8B90005E21C /* PunchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchData.swift; sourceTree = "<group>"; };
 		04E270C620F789F60099FB9F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		04E270CB20F7A7700099FB9F /* Dount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dount.swift; sourceTree = "<group>"; };
 		56B7FE0CF1020E064761BB40 /* Pods-NoxClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoxClock.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoxClock/Pods-NoxClock.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 				0405B3542109D552002DE036 /* SlashViewController.swift */,
 				046D073E210A09A800D5AEC1 /* LoginViewController.swift */,
 				043F942B210031F60052A5D1 /* ClockAlertViewController.xib */,
+				04896F3D210AC3880005E21C /* Model */,
 				04E270CA20F7A75B0099FB9F /* CustomView */,
 				046F996D20F6FEB000D471E1 /* Extension */,
 				046F996420F6F1F600D471E1 /* Clock */,
@@ -132,6 +139,7 @@
 				043F9434210045F40052A5D1 /* SemiCornerButton.swift */,
 				046F996720F6F21D00D471E1 /* XibView.swift */,
 				043F943C2100669D0052A5D1 /* CutomAlertViewController.swift */,
+				04896F3B210AC3610005E21C /* BaseModelProtocol.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -154,6 +162,15 @@
 				04E270C620F789F60099FB9F /* Color+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		04896F3D210AC3880005E21C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04896F3E210AC3D70005E21C /* EmployeeSimpleInfoData.swift */,
+				04896F40210AC8B90005E21C /* PunchData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		04E270CA20F7A75B0099FB9F /* CustomView */ = {
@@ -285,11 +302,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NoxClock/Pods-NoxClock-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -311,6 +334,7 @@
 				043F943D2100669D0052A5D1 /* CutomAlertViewController.swift in Sources */,
 				043F9435210045F40052A5D1 /* SemiCornerButton.swift in Sources */,
 				047CD7A52109D02200F8013A /* GradientView.swift in Sources */,
+				04896F3C210AC3610005E21C /* BaseModelProtocol.swift in Sources */,
 				046D073B2109EB8A00D5AEC1 /* SimpleTextField.swift in Sources */,
 				046F996F20F6FF2900D471E1 /* UIView+AnchorPoint.swift in Sources */,
 				046F996A20F6FA1E00D471E1 /* ClockView.swift in Sources */,
@@ -320,8 +344,10 @@
 				046F996820F6F21D00D471E1 /* XibView.swift in Sources */,
 				046F997720F7283800D471E1 /* ClockView+ClockObject.swift in Sources */,
 				046F996320F6F0AB00D471E1 /* IndexViewController.swift in Sources */,
+				04896F41210AC8B90005E21C /* PunchData.swift in Sources */,
 				046F997520F7108200D471E1 /* ClockObject.swift in Sources */,
 				04E270C720F789F60099FB9F /* Color+Extension.swift in Sources */,
+				04896F3F210AC3D70005E21C /* EmployeeSimpleInfoData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import MBProgressHUD
+import SwiftyJSON
 
 enum IndexViewStatus {
     case ClockIn
@@ -83,6 +86,67 @@ class IndexViewController: BaseViewController,ClockAlertViewControllerDelegate {
 
     }
     
+    // MARK: - API Method
+    
+    func punch() {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        Alamofire.request("http://220.130.130.109:3211/api/employee/punch", method: .post, parameters: ["employeeId":"005","workTypeId":"0","punchContent":"Test","punchLatitude":"25.0646145","punchLongitude":"121.5120884"])
+            .responseJSON { response in 
+                
+                MBProgressHUD.hide(for: self.view, animated: true)
+                switch(response.result) {
+                case .success(_):
+                    if let data = response.result.value{
+                        
+                        print(data)
+                        let json = JSON(data);
+                        let punchData = PunchData(parameter: json["data"])
+                        if punchData.workTypeId == 0 {
+                            
+                            self.status = IndexViewStatus.ClockOut;
+                            self.changeUIStatus();
+                            self.clockView.removePin();
+                            self.clockView.addPin();
+                        }
+                    }
+                case .failure(_):
+                    
+                    print("Error message:\(response.result.error)")
+                    break
+                }
+        }
+    }
+    
+    func punchOut() {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        Alamofire.request("http://220.130.130.109:3211/api/employee/punch", method: .post, parameters: ["employeeId":"005","workTypeId":"1","punchContent":"Test","punchLatitude":"25.0646145","punchLongitude":"121.5120884"])
+            .responseJSON { response in
+                
+                MBProgressHUD.hide(for: self.view, animated: true)
+                switch(response.result) {
+                case .success(_):
+                    if let data = response.result.value{
+                        
+                        let json = JSON(data);
+                        let punchData = PunchData(parameter: json["data"])
+                        if punchData.workTypeId == 1 {
+                            
+                            self.status = IndexViewStatus.ClockIn;
+                            self.changeUIStatus();
+                            self.clockView.addPin();
+                        }
+                    }
+                case .failure(_):
+                    
+                    print("Error message:\(response.result.error)")
+                    break
+                }
+        }
+    }
+
+    
     // MARK: - Private Method
     
     private func changeUIStatus() {
@@ -116,16 +180,13 @@ class IndexViewController: BaseViewController,ClockAlertViewControllerDelegate {
         
         switch cutomAlertViewStatus {
         case .ClockIn:
-            self.status = IndexViewStatus.ClockOut;
-            self.changeUIStatus();
-            clockView.removePin();
-            clockView.addPin();
+
+            punch();
             break;
             
         case .ClockOut:
-            self.status = IndexViewStatus.ClockIn;
-            self.changeUIStatus();
-            clockView.addPin();
+            
+            punchOut();
             break;
 
         }

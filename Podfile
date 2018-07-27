@@ -7,4 +7,8 @@ target 'NoxClock' do
 
   # Pods for NoxClock
   pod 'KVOController'
+  pod 'Alamofire', '~> 4.7'
+  pod 'MBProgressHUD'
+  pod 'SwiftyJSON', '~> 4.0'
+
 end
