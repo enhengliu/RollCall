@@ -12,6 +12,8 @@ import MBProgressHUD
 import SwiftyJSON
 
 enum IndexViewStatus {
+    
+    case ClockNone
     case ClockIn
     case ClockOut
 }
@@ -23,13 +25,16 @@ class IndexViewController: BaseViewController,ClockAlertViewControllerDelegate {
     @IBOutlet var gradientView: GradientView!
     @IBOutlet var clockInDisplayLabelView: UIView!
     @IBOutlet var clockInDisplayLabel: UILabel!
-    public var status:IndexViewStatus = IndexViewStatus.ClockIn;
+    public var status:IndexViewStatus = IndexViewStatus.ClockNone;
+    @IBOutlet var clockBannerView: DigitalClockBannerView!
+    @IBOutlet var moodDisplayLabel: UILabel!
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         
         super.viewDidLoad();
         self.setupUI();
+        self.getEmployeeData();
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,13 +46,24 @@ class IndexViewController: BaseViewController,ClockAlertViewControllerDelegate {
     
     func setupUI() {
         
-        clockInBtn.layer.masksToBounds = false
+        clockInBtn.layer.masksToBounds = false;
         clockInBtn.layer.shadowColor = UIColor.black.cgColor;
         clockInBtn.layer.shadowOffset = CGSize(width: 7, height: 7);
         clockInBtn.layer.shadowRadius = 19.0;
         clockInBtn.layer.shadowOpacity = 0.2;
         clockInDisplayLabelView.layer.cornerRadius = clockInDisplayLabelView.bounds.size.height/2;
         clockInDisplayLabelView.layer.masksToBounds = true;
+        clockBannerView.setCurrentDate(Date());
+        
+        if let clockInDate = Member.sharedInstance.clockInTime {
+            
+            clockBannerView.setClockInDate(clockInDate)
+        }
+        
+        if let clockOutDate = Member.sharedInstance.clockOutTime {
+            
+            clockBannerView.setClockOutDate(clockOutDate)
+        }
     }
     
     // MARK: - Button Method
@@ -86,90 +102,51 @@ class IndexViewController: BaseViewController,ClockAlertViewControllerDelegate {
 
     }
     
-    // MARK: - API Method
-    
-    func punch() {
-        
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        Alamofire.request("http://220.130.130.109:3211/api/employee/punch", method: .post, parameters: ["employeeId":"005","workTypeId":"0","punchContent":"Test","punchLatitude":"25.0646145","punchLongitude":"121.5120884"])
-            .responseJSON { response in 
-                
-                MBProgressHUD.hide(for: self.view, animated: true)
-                switch(response.result) {
-                case .success(_):
-                    if let data = response.result.value{
-                        
-                        print(data)
-                        let json = JSON(data);
-                        let punchData = PunchData(parameter: json["data"])
-                        if punchData.workTypeId == 0 {
-                            
-                            self.status = IndexViewStatus.ClockOut;
-                            self.changeUIStatus();
-                            self.clockView.removePin();
-                            self.clockView.addPin();
-                        }
-                    }
-                case .failure(_):
-                    
-                    print("Error message:\(response.result.error)")
-                    break
-                }
-        }
-    }
-    
-    func punchOut() {
-        
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        Alamofire.request("http://220.130.130.109:3211/api/employee/punch", method: .post, parameters: ["employeeId":"005","workTypeId":"1","punchContent":"Test","punchLatitude":"25.0646145","punchLongitude":"121.5120884"])
-            .responseJSON { response in
-                
-                MBProgressHUD.hide(for: self.view, animated: true)
-                switch(response.result) {
-                case .success(_):
-                    if let data = response.result.value{
-                        
-                        let json = JSON(data);
-                        let punchData = PunchData(parameter: json["data"])
-                        if punchData.workTypeId == 1 {
-                            
-                            self.status = IndexViewStatus.ClockIn;
-                            self.changeUIStatus();
-                            self.clockView.addPin();
-                        }
-                    }
-                case .failure(_):
-                    
-                    print("Error message:\(response.result.error)")
-                    break
-                }
-        }
-    }
-
-    
     // MARK: - Private Method
     
     private func changeUIStatus() {
         
-        if self.status == IndexViewStatus.ClockOut {
+        switch self.status {
             
-            clockView.clockIn();
-            clockInBtn.setImage(UIImage(named: "clock_out_btn"), for: UIControlState.normal);
-            clockInDisplayLabelView.backgroundColor = UIColor.init(hex: "8119D1").alpha(0.4);
-            clockInDisplayLabel.text = "下班";
-        }else {
-            
-            clockView.clockout();
+        case .ClockNone:
             clockInBtn.setImage(UIImage(named: "clock_in_btn"), for: UIControlState.normal);
             clockInDisplayLabelView.backgroundColor = UIColor.init(hex: "E04F4F").alpha(0.4);
             clockInDisplayLabel.text = "上班";
+            break;
+            
+        case .ClockIn:
+            clockView.clockIn(Member.sharedInstance.clockInTime!);
+            clockInBtn.setImage(UIImage(named: "clock_out_btn"), for: UIControlState.normal);
+            clockInDisplayLabelView.backgroundColor = UIColor.init(hex: "8119D1").alpha(0.4);
+            clockInDisplayLabel.text = "下班";
+            self.clockBannerView.setClockInDate(Member.sharedInstance.clockInTime!)
+            break;
+            
+        case .ClockOut:
+            print(Member.sharedInstance.clockOutTime!)
+            clockView.clockout(Member.sharedInstance.clockOutTime!);
+            clockInBtn.setImage(UIImage(named: "check_down_btn"), for: UIControlState.normal);
+            clockInDisplayLabelView.backgroundColor = UIColor.init(hex: "333333").alpha(0.4);
+            clockInDisplayLabel.text = "完成";
+            self.clockBannerView.setClockOutDate(Member.sharedInstance.clockOutTime!)
+            clockInBtn.isUserInteractionEnabled = false;
+            break;
         }
     }
     
     private func showAlertView () {
         
         let clockAlertViewController:ClockAlertViewController = ClockAlertViewController(nibName: "ClockAlertViewController", bundle: nil);
-        clockAlertViewController.status = self.status == IndexViewStatus.ClockIn ? ClockAlertViewStatus.ClockIn:ClockAlertViewStatus.ClockOut;
+        if self.status == .ClockNone {
+            
+            clockAlertViewController.status = .ClockIn;
+        }else if self.status == .ClockIn {
+            
+            clockAlertViewController.status = .ClockOut;
+        }else  {
+            
+            return;
+        }
         clockAlertViewController.delegate = self;
         clockAlertViewController.showInViewController(self);
     }
@@ -181,14 +158,54 @@ class IndexViewController: BaseViewController,ClockAlertViewControllerDelegate {
         switch cutomAlertViewStatus {
         case .ClockIn:
 
-            punch();
+            self.status = IndexViewStatus.ClockIn;
+            self.changeUIStatus();
             break;
             
         case .ClockOut:
             
-            punchOut();
+            self.status = IndexViewStatus.ClockOut;
+            self.changeUIStatus();
             break;
 
+        }
+    }
+    
+    // MARK: - API Method
+    
+    func getEmployeeData() {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        ClockAPIClient.shared.getEmployeeData(Member.sharedInstance.employeeId!) { response in
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            switch response.status {
+            case .OK:
+                if let data = response.value  {
+                    
+                    let employeeSimpleInfoData = EmployeeSimpleInfoData(parameter: data as! JSON)
+                    
+                    print(data)
+                    if let punchInfo = employeeSimpleInfoData.getPunchInData() {
+                        
+                        Member.sharedInstance.clockInTime = punchInfo.getPunchDate();
+                        self.status = IndexViewStatus.ClockIn;
+                        self.changeUIStatus();
+                    }
+                    
+                    if let punchInfo = employeeSimpleInfoData.getPunchOutData() {
+                    
+                        Member.sharedInstance.clockOutTime = punchInfo.getPunchDate();
+                        self.status = IndexViewStatus.ClockOut;
+                        self.changeUIStatus();
+                    }
+                }
+                break;
+                
+            default:
+                self.showToast("取得個人資料失敗")
+                break;
+            }
         }
     }
 }

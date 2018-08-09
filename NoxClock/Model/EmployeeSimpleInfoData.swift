@@ -6,7 +6,6 @@
 //  Copyright © 2018年 Nox. All rights reserved.
 //
 
-import UIKit
 import SwiftyJSON
 
 class EmployeeSimpleInfoData: BaseModelProtocol {
@@ -20,6 +19,7 @@ class EmployeeSimpleInfoData: BaseModelProtocol {
     let punchInfo:[PunchData]!
 
     required init(parameter: JSON) {
+        
         employeeId = parameter["employeeId"].stringValue
         employeeBirth = parameter["employeeBirth"].stringValue
         employeeTel = parameter["employeeTel"].stringValue
@@ -27,5 +27,31 @@ class EmployeeSimpleInfoData: BaseModelProtocol {
         employeeEmail = parameter["employeeEmail"].stringValue
         employeeTitle = parameter["employeeTitle"].stringValue
         punchInfo = parameter["punchInfo"].arrayValue.map {return PunchData(parameter: $0)}
+    }
+    
+    func getPunchInData() -> PunchData? {
+        
+        for punchData in punchInfo {
+            
+            if punchData.type == .PunchIn {
+                
+                return punchData;
+            }
+        }
+        
+        return nil;
+    }
+    
+    func getPunchOutData() -> PunchData? {
+        
+        for punchData in punchInfo {
+            
+            if punchData.type == .PunchOut {
+                
+                return punchData;
+            }
+        }
+        
+        return nil;
     }
 }

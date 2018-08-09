@@ -14,11 +14,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClockView" customModule="NoxClock" customModuleProvider="target">
             <connections>
-                <outlet property="dountView" destination="8a2-Ks-JCq" id="52O-95-I3b"/>
+                <outlet property="dountView" destination="8a2-Ks-JCq" id="NCZ-zi-Hah"/>
                 <outlet property="hourHand" destination="gBv-v7-USJ" id="ucT-aq-VGy"/>
                 <outlet property="minuteHand" destination="xxr-Nv-PoF" id="oc4-rq-z2P"/>
                 <outlet property="secondHand" destination="3ed-3c-CfS" id="Jcy-ne-07D"/>
-                <outlet property="testView" destination="qDK-HB-rzg" id="DRf-V9-zo5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,14 +28,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_dot" translatesAutoresizingMaskIntoConstraints="NO" id="iDp-D7-3AX">
                     <rect key="frame" x="0.0" y="0.0" width="272" height="272"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDK-HB-rzg">
-                    <rect key="frame" x="16" y="16" width="240" height="240"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="qDK-HB-rzg" secondAttribute="height" multiplier="1:1" id="YL4-TD-OrF"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8a2-Ks-JCq" customClass="Dount" customModule="NoxClock" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8a2-Ks-JCq">
                     <rect key="frame" x="16" y="16" width="240" height="240"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -98,11 +90,8 @@
                 <constraint firstItem="iDp-D7-3AX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="PEm-Ee-UGk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="iDp-D7-3AX" secondAttribute="bottom" id="R65-1g-eAm"/>
                 <constraint firstItem="Mvc-lt-iWQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WM7-am-HeJ"/>
-                <constraint firstItem="qDK-HB-rzg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WuS-Qh-fVP"/>
-                <constraint firstItem="qDK-HB-rzg" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="240/272" id="ftc-pF-B3s"/>
                 <constraint firstItem="iDp-D7-3AX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="g2x-Q3-9ag"/>
                 <constraint firstItem="Mvc-lt-iWQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="183/272" id="hRV-OZ-D2g"/>
-                <constraint firstItem="qDK-HB-rzg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="l33-Jb-wc1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iDp-D7-3AX" secondAttribute="trailing" id="n2U-ej-hrw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -11,6 +11,7 @@ import KVOController
 import Alamofire
 import MBProgressHUD
 import SwiftyJSON
+import SwiftHash
 
 class LoginViewController: BaseViewController {
 
@@ -31,7 +32,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet private var mainScrollView: UIScrollView!
     @IBOutlet var scrollViewContentHeightConstraint: NSLayoutConstraint!
     @IBOutlet var paddingViewHConstraint: NSLayoutConstraint!
-    
+
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -60,14 +61,14 @@ class LoginViewController: BaseViewController {
             
             
             if self.view.bounds.size.height - 100 < self.mainScrollView.contentSize.height {
-
+                
                 let offset = self.mainScrollView.contentSize.height - (self.view.bounds.size.height - 100 - self.paddingViewHConstraint.constant);
                 let padding = self.paddingViewHConstraint.constant - offset;
                 self.paddingViewHConstraint.constant = padding >= 0 ?padding:0;
                 self.scrollViewContentHeightConstraint.constant = self.mainScrollView.contentSize.height;
-
+                
             }else {
-
+                
                 self.paddingViewHConstraint.constant = 138;
                 self.scrollViewContentHeightConstraint.constant = self.mainScrollView.contentSize.height;
             }
@@ -98,28 +99,57 @@ class LoginViewController: BaseViewController {
     func login() {
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        Alamofire.request("http://220.130.130.109:3211/api/employee/005", method: .get, parameters: nil)
-            .responseJSON { response in
-                
-                MBProgressHUD.hide(for: self.view, animated: true)
-                switch(response.result) {
-                case .success(_):
-                    if let data = response.result.value{
-                        
-                        let jsonObject = JSON(data)
-                        let employeeSimpleInfoData:EmployeeSimpleInfoData = EmployeeSimpleInfoData(parameter: jsonObject["data"]);
-                        employeeSimpleInfoData.punchInfo.map {
-                            print($0.punchDate)
-                            print($0.punchContent)
-                        }
-                    }
-                    self.gotoIndexViewController();
-                case .failure(_):
+        ClockAPIClient.shared.login(accountTextField.text!, MD5(pwdTextField.text!).lowercased()) {  response in
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            switch response.status {
+            case .OK:
+                if let data = response.value{
                     
-                    print("Error message:\(response.result.error)")
-                    break
+                    print(data)
+                    let loginData:LoginData = LoginData(parameter:data as! JSON)
+                    self.setMemberInfo(loginData);
+                    self.setAuthHeader(loginData.token);
+                    self.showToast("登入成功", completion: { didTap in
+                        
+                        self.gotoIndexViewController();
+                    })
                 }
+                break;
+                
+            default:
+                self.showToast("登入失敗", completion:nil)
+                break;
             }
+        }
+    }
+    
+    //MARK: - Private Method
+    
+    private func setMemberInfo(_ loginData:LoginData) {
+        
+        Member.sharedInstance.employeeId = loginData.employeeId;
+        Member.sharedInstance.employeeEmail = loginData.employeeEmail;
+        Member.sharedInstance.token = loginData.token;
+        let token = String(format: "Bearer %@", loginData.token);
+        let headers: HTTPHeaders = ["Authorization": token]
+        ClockAPIClient.shared.setHeader(parameters: headers);
+        for punchData in loginData.punchInfo {
+            
+            if punchData.type == .PunchIn {
+                
+                Member.sharedInstance.clockInTime = punchData.getPunchDate();
+            } else {
+                
+                Member.sharedInstance.clockOutTime = punchData.getPunchDate();
+            }
+        }
+    }
+    
+    private func setAuthHeader(_ token:String) {
+        
+        let headers: HTTPHeaders = ["Authorization": token]
+        ClockAPIClient.shared.setHeader(parameters: headers);
     }
     
     //MARK: - Other View
@@ -130,19 +160,8 @@ class LoginViewController: BaseViewController {
             return
         }
         
-        guard let rootViewController = window.rootViewController else {
-            return
-        }
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "IndexViewController")
-        vc.view.frame = rootViewController.view.frame
-        vc.view.layoutIfNeeded()
-        
-        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            window.rootViewController = vc
-        }, completion: { completed in
-
-        })
+        window.switchRootViewController(vc)
     }
 }

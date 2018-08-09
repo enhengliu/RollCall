@@ -10,5 +10,6 @@ target 'NoxClock' do
   pod 'Alamofire', '~> 4.7'
   pod 'MBProgressHUD'
   pod 'SwiftyJSON', '~> 4.0'
-
+  pod 'Toast-Swift'
+  pod 'SwiftHash'
 end

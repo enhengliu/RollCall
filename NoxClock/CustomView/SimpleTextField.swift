@@ -12,10 +12,12 @@ protocol SimpleTextFieldDelegate:class {
 
 }
 
-class SimpleTextField: XibView {
+class SimpleTextField: XibView, UITextFieldDelegate {
     
-    @IBOutlet private var mainTextField: UITextField!
+    @IBOutlet private var mainTextField: UITextField! { didSet { mainTextField.delegate = self }}
     @IBOutlet private var separatorView: UIView!
+    @IBOutlet private var separatorAnimationView: UIView!
+    @IBOutlet private var separatorAnimationViewWConstraint: NSLayoutConstraint!
     @IBOutlet private var topConstraint: NSLayoutConstraint!
     @IBOutlet private var trailingConstraint: NSLayoutConstraint!
     @IBOutlet private var leadingConstraint: NSLayoutConstraint!
@@ -28,7 +30,13 @@ class SimpleTextField: XibView {
     @IBInspectable var placeholder: String = "" { didSet { setPlaceholder(placeholder: placeholder) }}
     @IBInspectable var content: String = "" { didSet { setContent(content: content) }}
     @IBInspectable var separatorColor: UIColor = UIColor.white { didSet { setSeparatorColor(color: separatorColor) }}
-
+    public var text:String? {
+        
+        get {
+            
+            return mainTextField.text;
+        }
+    }
     //MARK :- Public Method
     
     public func setPlaceholder(placeholder: String) {
@@ -61,6 +69,7 @@ class SimpleTextField: XibView {
     public func setContentColor(color: UIColor) {
 
         mainTextField.textColor = color;
+        separatorAnimationView.backgroundColor = color;
     }
     
     public func setContent(content: String) {
@@ -84,5 +93,44 @@ class SimpleTextField: XibView {
     public func resignFirstResponde() {
         
         mainTextField.resignFirstResponder()
+    }
+    
+    //MARK : - Animation Method
+    
+    private func showSeparatorViewAnimation () {
+        
+        separatorAnimationView.isHidden = false;
+        separatorAnimationViewWConstraint.constant = separatorView.bounds.size.width;
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.layoutIfNeeded();
+        })
+    }
+    
+    private func hideSeparatorViewAnimation () {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.separatorAnimationView.alpha = 0.0
+
+        }) {
+            complete in
+            
+            self.separatorAnimationViewWConstraint.constant = 0;
+            self.separatorAnimationView.alpha = 1.0
+            self.separatorAnimationView.isHidden = true;
+        }
+    }
+    
+    //MARK : - UITextFieldDelegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        showSeparatorViewAnimation();
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        hideSeparatorViewAnimation();
     }
 }

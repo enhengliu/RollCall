@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,6 +15,8 @@
                 <outlet property="bottomConstraint" destination="oLM-IP-STR" id="vej-vI-iLn"/>
                 <outlet property="leadingConstraint" destination="WRI-MZ-eNt" id="dL8-Hk-l3F"/>
                 <outlet property="mainTextField" destination="LWq-Sj-JkL" id="mkg-Dc-fFx"/>
+                <outlet property="separatorAnimationView" destination="7Kj-1J-vcA" id="KhD-O7-Puw"/>
+                <outlet property="separatorAnimationViewWConstraint" destination="L2y-T8-Jtx" id="nTz-4O-zjL"/>
                 <outlet property="separatorView" destination="j11-hC-hjz" id="sCU-XQ-hYm"/>
                 <outlet property="topConstraint" destination="7PG-f8-fnO" id="i9E-Me-gz6"/>
                 <outlet property="trailingConstraint" destination="TjS-sN-Ug6" id="PhN-jV-Dbq"/>
@@ -42,13 +44,23 @@
                                 <constraint firstAttribute="height" constant="1" id="gBd-Ed-9wf"/>
                             </constraints>
                         </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kj-1J-vcA">
+                            <rect key="frame" x="187.5" y="58" width="0.0" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="9SM-5c-Pnj"/>
+                                <constraint firstAttribute="width" id="L2y-T8-Jtx"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="j11-hC-hjz" secondAttribute="trailing" id="1ND-bl-RGZ"/>
                         <constraint firstItem="LWq-Sj-JkL" firstAttribute="top" secondItem="rIQ-JF-XB1" secondAttribute="top" id="3Zh-dC-HG7"/>
                         <constraint firstItem="j11-hC-hjz" firstAttribute="leading" secondItem="rIQ-JF-XB1" secondAttribute="leading" id="B5I-Lv-gE1"/>
+                        <constraint firstItem="7Kj-1J-vcA" firstAttribute="centerX" secondItem="rIQ-JF-XB1" secondAttribute="centerX" id="OzA-ML-kuY"/>
                         <constraint firstItem="LWq-Sj-JkL" firstAttribute="leading" secondItem="rIQ-JF-XB1" secondAttribute="leading" id="RcF-zW-oJ6"/>
+                        <constraint firstItem="7Kj-1J-vcA" firstAttribute="centerY" secondItem="j11-hC-hjz" secondAttribute="centerY" id="fo4-GR-m9k"/>
                         <constraint firstAttribute="bottom" secondItem="LWq-Sj-JkL" secondAttribute="bottom" id="ijr-wu-aib"/>
                         <constraint firstAttribute="trailing" secondItem="LWq-Sj-JkL" secondAttribute="trailing" id="w1b-Wh-0rX"/>
                         <constraint firstAttribute="bottom" secondItem="j11-hC-hjz" secondAttribute="bottom" id="xLX-kk-Bp4"/>

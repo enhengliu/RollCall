@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DigitalClockBannerView" customModule="NoxClock" customModuleProvider="target">
+            <connections>
+                <outlet property="clockInDigitalClockText" destination="yqO-yv-Iht" id="VHn-dh-hID"/>
+                <outlet property="clockOutDigitakClockText" destination="YHy-LT-Ztm" id="JhV-JZ-Yd7"/>
+                <outlet property="dayDisplayLabel" destination="cuy-4z-8X6" id="Isu-v0-Yty"/>
+                <outlet property="weekDisplayLabel" destination="7x6-F1-uHg" id="8W7-t4-tbk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n3Z-wQ-2lv">
+                    <rect key="frame" x="19" y="8" width="337" height="50"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DqF-cr-vAI">
+                            <rect key="frame" x="0.0" y="0.5" width="40" height="49"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期五" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x6-F1-uHg">
+                                    <rect key="frame" x="5" y="0.0" width="30" height="14"/>
+                                    <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="10"/>
+                                    <color key="textColor" red="0.90980392156862744" green="0.72941176470588232" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuy-4z-8X6">
+                                    <rect key="frame" x="2" y="14" width="36" height="35"/>
+                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="k9f-Sx-PKF"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-UX-r20">
+                            <rect key="frame" x="50" y="0.0" width="1" height="50"/>
+                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="h7U-Bb-OjB"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-Ak-QqT">
+                            <rect key="frame" x="61" y="0.0" width="133" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上班打卡" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKs-GE-SBT">
+                                    <rect key="frame" x="0.0" y="9.5" width="25" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="qE3-7s-YrY"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="11"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqO-yv-Iht" customClass="DigitalClockText" customModule="NoxClock" customModuleProvider="target">
+                                    <rect key="frame" x="33" y="0.0" width="100" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="5Qs-KE-YC2"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                            <color key="value" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YlR-Ru-JLu">
+                            <rect key="frame" x="204" y="0.0" width="133" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下班打卡" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDP-bc-dJ3">
+                                    <rect key="frame" x="0.0" y="9.5" width="25" height="31"/>
+                                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="11"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHy-LT-Ztm" customClass="DigitalClockText" customModule="NoxClock" customModuleProvider="target">
+                                    <rect key="frame" x="33" y="0.0" width="100" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                            <color key="value" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                            <color key="value" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="wxw-Ak-QqT" firstAttribute="width" secondItem="YlR-Ru-JLu" secondAttribute="width" id="0eQ-iS-5X0"/>
+                        <constraint firstItem="zKs-GE-SBT" firstAttribute="width" secondItem="fDP-bc-dJ3" secondAttribute="width" id="1Mf-sV-8lN"/>
+                        <constraint firstItem="YHy-LT-Ztm" firstAttribute="width" secondItem="yqO-yv-Iht" secondAttribute="width" id="RiP-Kj-xzb"/>
+                        <constraint firstAttribute="bottom" secondItem="MLm-UX-r20" secondAttribute="bottom" id="Xa2-pR-rzn"/>
+                        <constraint firstItem="MLm-UX-r20" firstAttribute="top" secondItem="n3Z-wQ-2lv" secondAttribute="top" id="iAs-xH-wpo"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="n3Z-wQ-2lv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DQe-v8-KNL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n3Z-wQ-2lv" secondAttribute="trailing" constant="18" id="Hol-gY-RYt"/>
+                <constraint firstItem="n3Z-wQ-2lv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="g5e-20-3yg"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="n3Z-wQ-2lv" secondAttribute="bottom" constant="8" id="hIX-Xa-9ng"/>
+                <constraint firstItem="n3Z-wQ-2lv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="iQS-pA-hVX"/>
+                <constraint firstItem="n3Z-wQ-2lv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="inc-dO-DRG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="-185"/>
+        </view>
+    </objects>
+</document>

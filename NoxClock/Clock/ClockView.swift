@@ -14,8 +14,7 @@ class ClockView: XibView {
     @IBOutlet var minuteHand: UIImageView!
     @IBOutlet var secondHand: UIImageView!
     private var clockOject:ClockObject!;
-    @IBOutlet var dountView: Dount!
-    @IBOutlet var testView: UIView!
+    @IBOutlet var dountView: UIView!
     var shape:CAShapeLayer!;
     var initAngle: CGFloat = 0;
     var endAngle: CGFloat = 0;
@@ -40,12 +39,12 @@ class ClockView: XibView {
     }
     
     override func layoutSubviews() {
-//
+
         super.layoutSubviews();
         
         if contentLayerView == nil {
             
-            contentLayerView = UIView(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width - 32, height: self.bounds.size.height - 32))
+            contentLayerView = UIView(frame: CGRect(x: 0, y: 0, width: dountView.bounds.size.width, height: dountView.bounds.size.height))
             contentLayerView?.backgroundColor = UIColor.white;
             contentLayerView?.center = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2);
             contentLayerView?.layer.borderWidth = 13;
@@ -54,31 +53,30 @@ class ClockView: XibView {
             contentLayerView?.layer.cornerRadius = contentLayerView!.bounds.size.height/2;
             self.addSubview(contentLayerView!);
         }
-        
     }
     
     //MARK :- Setup Method
 
     private func setDountView(_ degree:CGFloat) {
         
-        self.testView.transform = CGAffineTransform.identity;
-        self.testView.layoutIfNeeded();
+        self.dountView.transform = CGAffineTransform.identity;
+        self.dountView.layoutIfNeeded();
         gradient = CAGradientLayer()
-        gradient.frame =  CGRect(origin: CGPoint.zero, size: self.testView.frame.size)
+        gradient.frame =  CGRect(origin: CGPoint.zero, size: self.dountView.frame.size)
         gradient.colors = [UIColor.init(hex: "6FD0C1").cgColor,UIColor.init(hex: "A9D98F").cgColor,UIColor.init(hex: "8F95D9").cgColor]
-        gradient.cornerRadius = self.testView.bounds.size.height/2;
+        gradient.cornerRadius = self.dountView.bounds.size.height/2;
         
         shape = CAShapeLayer();
-        shape.lineWidth = 25;
-        shape.path = UIBezierPath(roundedRect: self.testView.bounds, cornerRadius: self.testView.bounds.size.height/2).cgPath;
+        shape.lineWidth = 26;
+        shape.path = UIBezierPath(roundedRect: self.dountView.bounds, cornerRadius: self.dountView.bounds.size.height/2).cgPath;
         shape.strokeColor = UIColor.black.cgColor
         shape.fillColor = UIColor.clear.cgColor
         gradient.mask = shape
-        self.testView.transform = CGAffineTransform.identity.concatenating(CGAffineTransform(rotationAngle: CommonDefine.radians(degree: degree)));
-        self.testView.layer.addSublayer(gradient)
+        self.dountView.transform = CGAffineTransform.identity.concatenating(CGAffineTransform(rotationAngle: CommonDefine.radians(degree: degree)));
+        self.dountView.layer.addSublayer(gradient)
         
         let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.duration = 60.0
+        animation.duration = 60.0 * 60.0 * 24
         animation.fromValue = 0;
         animation.toValue = 1;
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
@@ -148,6 +146,17 @@ extension ClockView {
         }
     }
     
+    func getAngle(_ date:Date) -> CGFloat {
+        
+        let myCalendar = Calendar(identifier: Calendar.Identifier.gregorian);
+        let myComponents = myCalendar.dateComponents([.hour,.minute,.second], from: date)
+        let second:CGFloat = CGFloat(myComponents.second!);
+        let minute:CGFloat = CGFloat(myComponents.minute!);
+        var hour:CGFloat = CGFloat(myComponents.hour!);
+        if hour > 12 { hour = hour - 12; }
+        return 360 * ((((hour * 60.0 * 60.0) + (minute * 60.0) + second) / 3600.0) / 12.0);
+    }
+    
     func bindClockObject(clockObject:ClockObject) {
         
         self.clockOject = clockObject;
@@ -161,27 +170,41 @@ extension ClockView {
         self.setHourHandRotation(initDegree:hourAngle);
     }
     
-    public func clockIn () {
+    public func clockIn (_ date:Date) {
         
         if gradient != nil {
             
             gradient.removeFromSuperlayer();
         }
-        initAngle = secondAngle;
-        self.setDountView(secondAngle);
+        initAngle = getAngle(date);
+        self.setDountView(initAngle);
+        self.removePin();
+        self.addPin(initAngle)
+        self.addStartFlag(initAngle)
     }
     
-    public func clockout () {
+    public func clockout(_ date:Date) {
         
-        shape.removeAllAnimations();
-        gradient.removeAllAnimations();
-        endAngle = secondAngle - initAngle;
-        shape.strokeEnd = endAngle/360.0;
+        if shape != nil {
+            
+            shape.removeAllAnimations();
+        }
+        
+        if gradient != nil {
+            
+            gradient.removeAllAnimations();
+        }
+        
+        endAngle = getAngle(date);
+        endAngle = endAngle.truncatingRemainder(dividingBy: 360)
+        let startAngle = 360 - initAngle
+        shape.strokeEnd = (endAngle + startAngle)/360.0;
+        self.addPin(endAngle)
+        self.addEndFlag(endAngle)
     }
     
-    public func addPin() {
+    private func addPin(_ angle:CGFloat) {
         
-        let angle:CGFloat = secondAngle;
         let radius : CGFloat = (self.bounds.size.width + 30)/2
         let x = cos((angle - 90)°) * radius + self.bounds.size.width/2 - 8;
         let y = sin((angle - 90)°) * radius + self.bounds.size.height/2 - 10;
@@ -191,18 +214,35 @@ extension ClockView {
         pin.image = UIImage(named: "clock_point");
         self.addSubview(pin)
         self.playPinAnimation(pin, (angle - 90));
+    }
+    
+    private func addStartFlag(_ angle:CGFloat) {
         
         let flag:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 26, height: 26));
         flag.image = UIImage(named: "clockIn_start_flag");
+        flag.setAnchorPoint(CGPoint(x: 0.5, y: 0.5));
         self.addSubview(flag);
-        let flagX = cos((angle - 90)°) * (self.bounds.size.width - 42)/2 + self.bounds.size.width/2 - 13;
-        let flagy = sin((angle - 90)°) * (self.bounds.size.width - 42)/2 + self.bounds.size.height/2 - 13;
+        let flagX = cos((angle - 90)°) * (self.dountView.bounds.size.width - 13)/2 + self.dountView.bounds.size.width/2;
+        let flagy = sin((angle - 90)°) * (self.dountView.bounds.size.height - 13)/2 + self.dountView.bounds.size.height/2;
         flag.frame.origin.x = flagX;
         flag.frame.origin.y = flagy;
         flag.tag = 100;
     }
     
-    public func removePin() {
+    private func addEndFlag(_ angle:CGFloat) {
+        
+        let flag:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 26, height: 26));
+        flag.setAnchorPoint(CGPoint(x: 0.5, y: 0.5));
+        flag.image = UIImage(named: "clockIn_end_flag");
+        self.addSubview(flag);
+        let flagX = cos((angle - 90)°) * (self.dountView.bounds.size.width - 13)/2 + self.dountView.bounds.size.width/2;
+        let flagy = sin((angle - 90)°) * (self.dountView.bounds.size.height - 13)/2 + self.dountView.bounds.size.height/2;
+        flag.frame.origin.x = flagX;
+        flag.frame.origin.y = flagy;
+        flag.tag = 100;
+    }
+    
+    private func removePin() {
         
         for subview in self.subviews {
             

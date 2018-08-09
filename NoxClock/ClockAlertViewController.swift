@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import MBProgressHUD
+import SwiftyJSON
 
 enum ClockAlertViewStatus {
     case ClockIn
@@ -111,9 +114,19 @@ class ClockAlertViewController: CutomAlertViewController {
     //MARK: - Button Method
     
     @IBAction func mainButtonOnPress(_ sender: UIButton) {
-     
-        self.showResultView();
-        self.hideDefaultView();
+        
+        switch self.status {
+        case .ClockIn:
+            self.punch();
+            break;
+            
+        case .ClockOut:
+            self.punchOut();
+            break;
+            
+        default:
+            break;
+        }
     }
     
     //MARK: - Timer Method
@@ -140,7 +153,7 @@ class ClockAlertViewController: CutomAlertViewController {
             
             self.removeTimer();
             self.delegate?.cutomAlertViewControllerDidSuccess(self, cutomAlertViewStatus: self.status);
-            Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(self.hide), userInfo: nil, repeats: false);
+            Timer.scheduledTimer(timeInterval: 1.3, target: self, selector: #selector(self.hide), userInfo: nil, repeats: false);
         }
     }
     
@@ -153,6 +166,74 @@ class ClockAlertViewController: CutomAlertViewController {
         }) { (complete) in
             
             self.defaultView.isHidden = true;
+        }
+    }
+    
+    // MARK: - API Method
+    
+    func punch() {
+        
+//        let punchData = PunchData(parameter: ["punchDate":"2018/08/09 09:05:54","workTypeId":0,"punchContent":""]);
+//        Member.sharedInstance.clockInTime = punchData.getPunchDate();
+//        self.showResultView();
+//        self.hideDefaultView();
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        ClockAPIClient.shared.punchIn(Member.sharedInstance.employeeId!,nil, 25.0646145, 121.5120884) {  response in
+
+            MBProgressHUD.hide(for: self.view, animated: true)
+            switch response.status {
+            case .OK:
+                if let data = response.value {
+
+                    print(data)
+                    let punchData = PunchData(parameter: data as! JSON)
+                    if punchData.type == .PunchIn {
+
+                        Member.sharedInstance.clockInTime = punchData.getPunchDate();
+                        self.showResultView();
+                        self.hideDefaultView();
+                    }
+                }
+                break;
+
+            default:
+                self.showToast("打卡失敗")
+                break;
+            }
+        }
+    }
+    
+    func punchOut() {
+        
+//        let punchData = PunchData(parameter: ["punchDate":"2018/08/09 19:05:54","workTypeId":1,"punchContent":""]);
+//        Member.sharedInstance.clockOutTime = punchData.getPunchDate();
+//        self.showResultView();
+//        self.hideDefaultView();
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        ClockAPIClient.shared.punchOut(Member.sharedInstance.employeeId!,nil ,25.0646145, 121.5120884, nil) {  response in
+
+            MBProgressHUD.hide(for: self.view, animated: true)
+            switch response.status {
+            case .OK:
+                if let data = response.value {
+
+                    print(data)
+                    let punchData = PunchData(parameter: data as! JSON)
+                    if punchData.type == .PunchOut {
+
+                        Member.sharedInstance.clockOutTime = punchData.getPunchDate();
+                        self.showResultView();
+                        self.hideDefaultView();
+                    }
+                }
+                break;
+
+            default:
+                self.showToast("打卡失敗")
+                break;
+            }
         }
     }
 }

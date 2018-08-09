@@ -6,19 +6,37 @@
 //  Copyright © 2018年 Nox. All rights reserved.
 //
 
-import UIKit
 import SwiftyJSON
 
 class PunchData: BaseModelProtocol {
 
     let punchDate:String!
     let punchContent:String!
-    let workTypeId:Int!
+    let type:PunchType!
+
+    enum PunchType: Int {
+        
+        case PunchIn = 0
+        case PunchOut = 1
+    }
     
     required init(parameter: JSON) {
         
         punchDate = parameter["punchDate"].stringValue
         punchContent = parameter["punchContent"].stringValue
-        workTypeId = parameter["workTypeId"].intValue
+        let workTypeId = parameter["workTypeId"].intValue
+        type = PunchData.PunchType(rawValue: workTypeId)
+    }
+    
+    func getPunchDate() -> Date? {
+        
+        let formatter  = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        if let date = formatter.date(from: punchDate) {
+            
+            return date;
+        }
+        
+        return nil
     }
 }

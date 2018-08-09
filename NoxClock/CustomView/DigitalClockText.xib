@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Digital Dismay.otf">
+            <string>DigitalDismay</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DigitalClockText" customModule="NoxClock" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomDotView" destination="yfL-z7-whz" id="Br8-hS-Sdu"/>
+                <outlet property="hourLabel" destination="66s-mh-Pqd" id="Yqb-yz-rDR"/>
+                <outlet property="minuteLabel" destination="brn-GW-NmN" id="WwN-jb-Qrw"/>
+                <outlet property="upDotView" destination="ZTI-e0-5Km" id="wBU-h0-sNI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="186" height="83"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MGh-wJ-05C">
+                    <rect key="frame" x="0.0" y="0.0" width="186" height="83"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="66s-mh-Pqd">
+                            <rect key="frame" x="0.0" y="11" width="84.5" height="61.5"/>
+                            <fontDescription key="fontDescription" name="DigitalDismay" family="Digital Dismay" pointSize="59"/>
+                            <color key="textColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h83-Q4-je8">
+                            <rect key="frame" x="89.5" y="32" width="7" height="19"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTI-e0-5Km">
+                                    <rect key="frame" x="0.0" y="0.0" width="7" height="7"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="ZTI-e0-5Km" secondAttribute="height" multiplier="1:1" id="6Dz-IH-2bx"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfL-z7-whz">
+                                    <rect key="frame" x="0.0" y="12" width="7" height="7"/>
+                                    <color key="backgroundColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="yfL-z7-whz" firstAttribute="width" secondItem="ZTI-e0-5Km" secondAttribute="width" id="HhY-1i-r3R"/>
+                                <constraint firstItem="yfL-z7-whz" firstAttribute="height" secondItem="ZTI-e0-5Km" secondAttribute="height" id="yL1-b3-h7f"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="brn-GW-NmN">
+                            <rect key="frame" x="101.5" y="10" width="84.5" height="63"/>
+                            <fontDescription key="fontDescription" name="DigitalDismay" family="Digital Dismay" pointSize="60"/>
+                            <color key="textColor" red="0.90980392160000001" green="0.72941176470000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="h83-Q4-je8" firstAttribute="centerY" secondItem="MGh-wJ-05C" secondAttribute="centerY" id="2O0-OX-ei6"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="brn-GW-NmN" secondAttribute="trailing" id="9RF-dB-C3L"/>
+                        <constraint firstItem="66s-mh-Pqd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MGh-wJ-05C" secondAttribute="leading" id="TVe-MI-V8u"/>
+                        <constraint firstItem="brn-GW-NmN" firstAttribute="width" secondItem="66s-mh-Pqd" secondAttribute="width" id="UhS-hK-chN"/>
+                        <constraint firstItem="66s-mh-Pqd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MGh-wJ-05C" secondAttribute="top" id="g93-Ip-qm6"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="66s-mh-Pqd" secondAttribute="bottom" id="hS8-xG-2gu"/>
+                        <constraint firstItem="brn-GW-NmN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MGh-wJ-05C" secondAttribute="top" id="ii4-At-Ufu"/>
+                        <constraint firstItem="yfL-z7-whz" firstAttribute="width" secondItem="brn-GW-NmN" secondAttribute="width" multiplier="0.08" id="kW9-Qk-CP0"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="brn-GW-NmN" secondAttribute="bottom" id="rrm-7k-cHT"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MGh-wJ-05C" secondAttribute="bottom" id="KQ3-V5-XBI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MGh-wJ-05C" secondAttribute="trailing" id="WOv-Ju-SVg"/>
+                <constraint firstItem="MGh-wJ-05C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jNt-r7-Scm"/>
+                <constraint firstItem="MGh-wJ-05C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="kYr-nq-fT2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-85" y="165.5"/>
+        </view>
+    </objects>
+</document>
